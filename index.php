@@ -131,7 +131,7 @@ include 'header.php';
                                 <div class="product-image">
                                     <img src="assets/image/skin-care/product-image.png" alt="">
                                     <div class="add-cart-btn">
-                                        <a href="#" class="primary-btn6 cart-btn"><svg width="16" height="16"
+                                        <a href="product-details.php" class="primary-btn6 cart-btn"><svg width="16" height="16"
                                                 viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
                                                 <path
                                                     d="M11.9007 15H4.10071C2.45071 15 1.10071 13.65 1.10071 12V11.9L1.40071 3.9C1.45071 2.25 2.80071 1 4.40071 1H11.6007C13.2007 1 14.5507 2.25 14.6007 3.9L14.9007 11.9C14.9507 12.7 14.6507 13.45 14.1007 14.05C13.5507 14.65 12.8007 15 12.0007 15H11.9007ZM4.40071 2C3.30071 2 2.45071 2.85 2.40071 3.9L2.10071 12C2.10071 13.1 3.00071 14 4.10071 14H12.0007C12.5507 14 13.0507 13.75 13.4007 13.35C13.7507 12.95 13.9507 12.45 13.9507 11.9L13.6507 3.9C13.6007 2.8 12.7507 2 11.6507 2H4.40071Z" />
@@ -402,7 +402,7 @@ include 'header.php';
                     <div class="swiper-wrapper">
                         <div class="swiper-slide">
                             <div class="skin-care-service-card">
-                                <a href="services-details.html" class="service-image">
+                                <a href="services-details.php" class="service-image">
                                     <img src="assets/image/skin-care/service-image1.png" alt="">
                                 </a>
                                 <div class="service-content">
@@ -563,7 +563,7 @@ include 'header.php';
                             Anti-Aging Benefits
                         </li>
                     </ul>
-                    <a class="primary-btn1 service-menu-btn" href="services-details.html">
+                    <a class="primary-btn1 service-menu-btn" href="services-details.php">
                         VIEW SERVICE MENU
                         <svg class="arrow" width="10" height="10" viewBox="0 0 10 10" fill="none"
                             xmlns="http://www.w3.org/2000/svg">
