@@ -67,11 +67,6 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="review.php">
-                                    Reviews
-                                </a>
-                            </li>
-                            <li>
                                 <a href="privacy-policy.php">
                                     Privacy Policy
                                 </a>
