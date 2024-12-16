@@ -8,7 +8,8 @@ $params = [
     'brand' => isset($_GET['brand']) ? $_GET['brand'] : '',
     'skin_type' => isset($_GET['skin_type']) ? $_GET['skin_type'] : '',
     'price_min' => isset($_GET['price_min']) ? $_GET['price_min'] : '',
-    'price_max' => isset($_GET['price_max']) ? $_GET['price_max'] : ''
+    'price_max' => isset($_GET['price_max']) ? $_GET['price_max'] : '',
+    'skin_concern' => isset($_GET['skin_concern']) ? $_GET['skin_concern'] : ''
 ];
 
 $sql = "SELECT * FROM products WHERE status = 'active'";
@@ -25,6 +26,10 @@ if ($params['type'] != '') {
 if ($params['name'] != '') {
     $conditions[] = "product_name LIKE ?";
     $values[] = '%' . $params['name'] . '%';
+}
+if ($params['skin_concern'] != '') {
+    $conditions[] = "skin_concern LIKE ?";
+    $values[] = '%' . $params['skin_concern'] . '%';
 }
 if ($params['brand'] != '') {
     $conditions[] = "brand LIKE ?";
@@ -113,7 +118,7 @@ $ip = getClientIP();
 if ($ip) {
     $ip = "178.238.11.6";
 }
-// $ip = "125.22.51.250";
+$ip = "125.22.51.250";
 // $ip = "178.238.11.6";
 $country = getCountryFromIP($ip);
 $exchangeRates = getCurrencyExchangeRates();
@@ -128,9 +133,6 @@ $currencyCode = isset($currencyCodes[$country]) ? $currencyCodes[$country] : 'US
 $exchangeRate = isset($exchangeRates[$currencyCode]) ? $exchangeRates[$currencyCode] : 1;
 $priceInSelectedCurrency = $priceInUSD * $exchangeRate;
 
-echo "Client's Country: " . $country . "<br>";
-echo "Price in USD: $" . $priceInUSD . "<br>";
-echo "Price in " . $currencyCode . ": " . number_format($priceInSelectedCurrency, 2);
 ?>
 <div style="background-color:#020101;backdrop-filter: blur(30px);height:135px">
 

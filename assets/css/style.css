@@ -17121,6 +17121,11 @@ input[type="range"]::-webkit-slider-thumb {
   width: 200px;
   border: none;
   text-align: center;
+  transition: transform 0.5s ease; 
+}
+.card:hover{
+  cursor: pointer;
+  transform:scale(1.1);
 }
 
 .card-img-top {

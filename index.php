@@ -96,38 +96,38 @@ include 'header.php';
     <h1>Shop by Skin Concern</h1>
     <div class="card-container">
         <!-- Card 1 -->
-        <div class="card">
-            <img src="https://via.placeholder.com/200" class="card-img-top" alt="Brand 1">
+        <div class="card" onclick="window.location.href='product-listing.php?skin_concern=antiaging'">
+            <img src="https://glo7.com/cdn/shop/files/home1.png?v=1688977868&width=200" class="card-img-top" alt="Brand 1">
             <h5 class="card-title">Anti-Aging</h5>
         </div>
 
         <!-- Card 2 -->
-        <div class="card">
-            <img src="https://via.placeholder.com/200" class="card-img-top" alt="Brand 2">
+        <div class="card" onclick="window.location.href='product-listing.php?skin_concern=acne'">
+            <img src="https://glo7.com/cdn/shop/files/home8.png?v=1688978603&width=200" class="card-img-top" alt="Brand 2">
             <h5 class="card-title">Acne</h5>
         </div>
 
         <!-- Card 3 -->
-        <div class="card">
-            <img src="https://via.placeholder.com/200" class="card-img-top" alt="Brand 3">
+        <div class="card" onclick="window.location.href='product-listing.php?skin_concern=darkspots'">
+            <img src="https://glo7.com/cdn/shop/files/home3.png?v=1688977890&width=200" class="card-img-top" alt="Brand 3">
             <h5 class="card-title">Dark Spots</h5>
         </div>
 
         <!-- Card 4 -->
-        <div class="card">
-            <img src="https://via.placeholder.com/200" class="card-img-top" alt="Brand 4">
+        <div class="card" onclick="window.location.href='product-listing.php?skin_concern=dryness'">
+            <img src="https://glo7.com/cdn/shop/files/home4.png?v=1688977890&width=200" class="card-img-top" alt="Brand 4">
             <h5 class="card-title">Dryness</h5>
         </div>
 
         <!-- Card 5 -->
-        <div class="card">
-            <img src="https://via.placeholder.com/200" class="card-img-top" alt="Brand 5">
+        <div class="card" onclick="window.location.href='product-listing.php?skin_concern=wrinkles'">
+            <img src="https://glo7.com/cdn/shop/files/home6.png?v=1688978460&width=200" class="card-img-top" alt="Brand 5">
             <h5 class="card-title">Wrinkles</h5>
         </div>
 
         <!-- Card 6 -->
-        <div class="card">
-            <img src="https://via.placeholder.com/200" class="card-img-top" alt="Brand 6">
+        <div class="card" onclick="window.location.href='product-listing.php?skin_concern=blackheads'">
+            <img src="https://glo7.com/cdn/shop/files/home7.png?v=1688978461&width=200" class="card-img-top" alt="Brand 6">
             <h5 class="card-title">Blackheads</h5>
         </div>
     </div>
@@ -1192,7 +1192,7 @@ include 'header.php';
 <!-- faq section ends here -->
 
 <!-- Galleary section strats here -->
-<div class="gallery-section spa-gallery">
+<!-- <div class="gallery-section spa-gallery">
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
@@ -1343,7 +1343,7 @@ include 'header.php';
             </div>
         </div>
     </div>
-</div>
+</div> -->
 <div class="tagembed-widget" style="width:100%;height:100%" data-widget-id="2143236" data-tags="false" view-url="https://widget.tagembed.com/2143236"></div>
 <script src="https://widget.tagembed.com/embed.min.js" type="text/javascript"></script>
 <!-- Galleary section ends here -->
