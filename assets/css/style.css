@@ -17164,3 +17164,27 @@ input[type="range"]::-webkit-slider-thumb {
     font-size: 1rem;
   }
 }
+
+.popup{
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  width: 150px;
+  height: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: slider 1s ease-in;
+}
+.popup-video{
+  height: 100%;
+  width: 100%;
+}
+@keyframes slider {
+  from{
+      transform: translateX(100%);
+  }
+  to{
+      transform: translateX(-15%);
+  }
+}
