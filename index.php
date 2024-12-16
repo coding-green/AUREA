@@ -75,7 +75,7 @@ include 'header.php';
                             <p>Exploration and engagement, inviting visitors to discover the benefits your skincare
                                 solutions can provide.</p>
                             <a class="primary-btn4 breadcram-btn" href="booking.html">
-                                BOOK APPOINTMENT
+                                Shop Now
                                 <svg class="arrow" width="10" height="10" viewBox="0 0 10 10" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
                                     <path
@@ -647,7 +647,7 @@ include 'header.php';
                         been <span>50% discount</span> to every
                         single service package.</h2>
                     <a class="primary-btn1 service-btn" href="booking.html">
-                        BOOK AN APPOINTMENT
+                        Shop Now
                         <svg class="arrow" width="10" height="10" viewBox="0 0 10 10" fill="none"
                             xmlns="http://www.w3.org/2000/svg">
                             <path d="M1 9L9 1M9 1C7.22222 1.33333 3.33333 2 1 1M9 1C8.66667 2.66667 8 6.33333 9 9"
