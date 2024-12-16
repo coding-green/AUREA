@@ -108,11 +108,6 @@ function initiateReturn() {
   // Add return process page URL here
 }
 
-// Logout function
-function logout() {
-  alert('You have logged out!');
-  // Add actual logout functionality here (e.g., redirect, clear session)
-}
 
 // Delete Account function
 function deleteAccount() {
