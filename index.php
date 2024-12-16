@@ -31,7 +31,7 @@ include 'header.php';
                             <p>Exploration and engagement, inviting visitors to discover the benefits your skincare
                                 solutions can provide.</p>
                             <a class="primary-btn4 breadcram-btn" href="booking.html">
-                                BOOK APPOINTMENT
+                                Shop Now
                                 <svg class="arrow" width="10" height="10" viewBox="0 0 10 10" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
                                     <path
@@ -53,7 +53,7 @@ include 'header.php';
                             <p>Exploration and engagement, inviting visitors to discover the benefits your skincare
                                 solutions can provide.</p>
                             <a class="primary-btn4 breadcram-btn" href="booking.html">
-                                BOOK APPOINTMENT
+                                Shop Now
                                 <svg class="arrow" width="10" height="10" viewBox="0 0 10 10" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
                                     <path
