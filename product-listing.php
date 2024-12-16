@@ -11,17 +11,13 @@ $params = [
     'price_max' => isset($_GET['price_max']) ? $_GET['price_max'] : ''
 ];
 
-// Base SQL query for active products
 $sql = "SELECT * FROM products WHERE status = 'active'";
 $result = $conn->query($sql);
 
-// Get the number of rows
 $totalRows = $result->num_rows;
-// Array to hold dynamic conditions
 $conditions = [];
 $values = [];
 
-// Dynamically add conditions based on the provided parameters
 if ($params['type'] != '') {
     $conditions[] = "product_type LIKE ?";
     $values[] = '%' . $params['type'] . '%';
@@ -47,13 +43,10 @@ if ($params['price_max'] != '') {
     $values[] = $params['price_max'];
 }
 
-// Append conditions to SQL if any filters are provided
 if (!empty($conditions)) {
     $sql .= " AND " . implode(" AND ", $conditions);
 }
 
-
-// Prepare the SQL statement
 $stmt = $conn->prepare($sql);
 
 // Check for prepare errors
@@ -61,42 +54,83 @@ if ($stmt === false) {
     die('MySQL prepare error: ' . $conn->error);
 }
 
-// If there are conditions, dynamically bind parameters
 if (!empty($values)) {
-    // Dynamically determine parameter types (s for string, d for decimal)
-    $types = str_repeat('s', count($values));  // Assuming all are strings by default
+    $types = str_repeat('s', count($values));
     if ($params['price_min'] != '' || $params['price_max'] != '') {
-        // Replace 's' with 'd' if price is present
         $types = preg_replace('/s/', 'd', $types);
     }
-
-    // Output types for debugging
-
-    // Bind parameters to the SQL statement
     $stmt->bind_param($types, ...$values);
 }
 
-// Execute the query
 $stmt->execute();
 
-// Check if execution was successful
 if ($stmt->error) {
     die('Execute error: ' . $stmt->error);
 }
 
 $result = $stmt->get_result();
 $num_rows = $result->num_rows;
-// Check if products are found
 if ($result->num_rows > 0) {
     $products = $result->fetch_all(MYSQLI_ASSOC);
 } else {
     $products = [];
 }
 
-// Close the statement and connection
 $stmt->close();
 $conn->close();
 
+function getClientIP()
+{
+
+    if (!empty($_SERVER['HTTP_CLIENT_IP'])) {
+        return $_SERVER['HTTP_CLIENT_IP'];
+    } elseif (!empty($_SERVER['HTTP_X_FORWARDED_FOR'])) {
+        return $_SERVER['HTTP_X_FORWARDED_FOR'];
+    } else {
+        return $_SERVER['REMOTE_ADDR'];
+    }
+}
+
+function getCountryFromIP($ip)
+{
+    $accessKey = '28fc85b3730c66';
+    $geoData = file_get_contents("http://ipinfo.io/{$ip}/json?token={$accessKey}");
+    $location = json_decode($geoData);
+    return $location->country;
+}
+
+function getCurrencyExchangeRates()
+{
+    $apiUrl = "https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@latest/v1/currencies/usd.json";
+    $exchangeData = file_get_contents($apiUrl);
+    $decodedData = json_decode($exchangeData, true);
+
+    return $decodedData['usd'];
+}
+
+
+$ip = getClientIP();
+if ($ip) {
+    $ip = "178.238.11.6";
+}
+// $ip = "125.22.51.250";
+// $ip = "178.238.11.6";
+$country = getCountryFromIP($ip);
+$exchangeRates = getCurrencyExchangeRates();
+$priceInUSD = 10;
+$currencyCodes = [
+    'US' => 'usd',
+    'IN' => 'inr',
+    'GB' => 'gbp',
+    'CA' => 'cad'
+];
+$currencyCode = isset($currencyCodes[$country]) ? $currencyCodes[$country] : 'USD';
+$exchangeRate = isset($exchangeRates[$currencyCode]) ? $exchangeRates[$currencyCode] : 1;
+$priceInSelectedCurrency = $priceInUSD * $exchangeRate;
+
+echo "Client's Country: " . $country . "<br>";
+echo "Price in USD: $" . $priceInUSD . "<br>";
+echo "Price in " . $currencyCode . ": " . number_format($priceInSelectedCurrency, 2);
 ?>
 <div style="background-color:#020101;backdrop-filter: blur(30px);height:135px">
 
@@ -442,7 +476,7 @@ $conn->close();
                                             <li><i class="bi bi-star-fill"></i></li>
                                         </ul>
                                         <h4><a href="product-details.php"><?php echo htmlspecialchars($product['product_name']); ?></a></h4>
-                                        <span>$545.0</span>
+                                        <span><?php echo round($product["price"] * $exchangeRate, 2) . " " . strtoupper($currencyCode) ?></span>
                                     </div>
                                 </div>
                             </div>
