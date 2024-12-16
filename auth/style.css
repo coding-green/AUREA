@@ -1,0 +1,85 @@
+/* General Reset and Common Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f7f6;
+  color: #333;
+  padding: 20px;
+}
+
+.container {
+  max-width: 400px;
+  margin: 0 auto;
+  background-color: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Primary and Secondary Color Theme */
+.primary-color {
+  color: #e8af57;
+}
+
+.secondary-color {
+  color: #c1e5e1;
+}
+
+/* Form Inputs */
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="submit"] {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+input[type="submit"] {
+  background-color: #e8af57;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  background-color: #d58d47;
+}
+
+h1 {
+  text-align: center;
+  color: #e8af57;
+}
+
+p {
+  text-align: center;
+}
+
+a {
+  color: #e8af57;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+button {
+  background-color: #e8af57;
+  border: none;
+  padding: 10px;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+button:hover {
+  background-color: #d58d47;
+}
