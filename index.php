@@ -92,7 +92,46 @@ include 'header.php';
 
 </div>
 <!-- Banner section ends here -->
+<div class="my-5 shop-by-concern">
+    <h1>Shop by Skin Concern</h1>
+    <div class="card-container">
+        <!-- Card 1 -->
+        <div class="card">
+            <img src="https://via.placeholder.com/200" class="card-img-top" alt="Brand 1">
+            <h5 class="card-title">Anti-Aging</h5>
+        </div>
 
+        <!-- Card 2 -->
+        <div class="card">
+            <img src="https://via.placeholder.com/200" class="card-img-top" alt="Brand 2">
+            <h5 class="card-title">Acne</h5>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="card">
+            <img src="https://via.placeholder.com/200" class="card-img-top" alt="Brand 3">
+            <h5 class="card-title">Dark Spots</h5>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="card">
+            <img src="https://via.placeholder.com/200" class="card-img-top" alt="Brand 4">
+            <h5 class="card-title">Dryness</h5>
+        </div>
+
+        <!-- Card 5 -->
+        <div class="card">
+            <img src="https://via.placeholder.com/200" class="card-img-top" alt="Brand 5">
+            <h5 class="card-title">Wrinkles</h5>
+        </div>
+
+        <!-- Card 6 -->
+        <div class="card">
+            <img src="https://via.placeholder.com/200" class="card-img-top" alt="Brand 6">
+            <h5 class="card-title">Blackheads</h5>
+        </div>
+    </div>
+</div>
 <!-- product section strats here -->
 <div class="skin-care-product-section mb-120 pt-120">
     <div class="container">
@@ -1305,6 +1344,8 @@ include 'header.php';
         </div>
     </div>
 </div>
+<div class="tagembed-widget" style="width:100%;height:100%" data-widget-id="2143236" data-tags="false" view-url="https://widget.tagembed.com/2143236"></div>
+<script src="https://widget.tagembed.com/embed.min.js" type="text/javascript"></script>
 <!-- Galleary section ends here -->
 <?php
 include 'footer.php';

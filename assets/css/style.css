@@ -17102,3 +17102,60 @@ input[type="range"]::-webkit-slider-thumb {
         margin-bottom: 10px;
     }
 }
+
+
+.shop-by-concern h1 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 0 10px;
+}
+
+.card {
+  width: 200px;
+  border: none;
+  text-align: center;
+}
+
+.card-img-top {
+  border-radius: 50%;
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.card-title {
+  font-size: 1.2rem;
+  margin-top: 10px;
+}
+
+/* Responsive layout */
+@media (max-width: 768px) {
+  .card {
+    width: 150px;
+  }
+
+  .card-img-top {
+    height: 150px;
+  }
+}
+
+@media (max-width: 480px) {
+  .card {
+    width: 120px;
+  }
+
+  .card-img-top {
+    height: 120px;
+  }
+
+  .card-title {
+    font-size: 1rem;
+  }
+}
