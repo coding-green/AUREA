@@ -310,7 +310,6 @@ $conn->close();
                                         class="max-input"
                                         value="<?php echo isset($_GET['price_max']) ? $_GET['price_max'] : $roundedceilvalue; ?>">
                                 </div>
-
                             </div>
                             <div class="slider-container">
                                 <div class="price-slider">
