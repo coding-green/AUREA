@@ -136,16 +136,7 @@ if (!isset($_SESSION['email'])) {
       </div>
     </div>
   </main>
-  <!-- <script>
-  // write code for logout
 
-  function logout() {
-    localStorage.removeItem('user');
-    window.location.href = "../login.php";
-  }
--->
-
-  </script>
 </body>
 
 </html>

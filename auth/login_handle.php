@@ -8,10 +8,6 @@ if (isset($_SESSION['email'])) {
     header('Location: ../index.php');
     exit;
 }
-elseif (!isset($_SESSION['email'])) {
-    header('Location: ../index.php');
-    exit;
-}
 
 // Function to validate username and password
 function validateUser($inputEmail, $inputPassword, $pdo) {

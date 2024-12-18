@@ -8,11 +8,6 @@ if (isset($_SESSION['email'])) {
     header('Location: ../index.php');
     exit;
 }
-elseif (isset($_SESSION['email'])) {
-    header('Location: ../index.php');
-    exit;
-}
-
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $email = $_POST['email'] ?? null;
     $password = $_POST['password'] ?? null;
