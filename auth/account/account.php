@@ -3,8 +3,8 @@ session_start();
 
 // Check if the user is already logged in
 if (!isset($_SESSION['email'])) {
-    header('Location: ../../index.php');
-    exit;
+  header('Location: ../../index.php');
+  exit;
 }
 
 ?>
@@ -135,17 +135,17 @@ if (!isset($_SESSION['email'])) {
         </div>
       </div>
     </div>
-</main>
-<!-- <script>
+  </main>
+  <!-- <script>
   // write code for logout
 
   function logout() {
     localStorage.removeItem('user');
     window.location.href = "../login.php";
   }
+-->
 
-
-</script>
+  </script>
 </body>
 
 </html>
