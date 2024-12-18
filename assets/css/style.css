@@ -1514,7 +1514,6 @@ header.buret .main-menu ul > li ul.sub-menu {
   top: 86px;
   margin: 0;
   display: none;
-  min-width: 280px;
   background: #030e29f0;
   border: 1px solid #272727;
   text-align: left;
@@ -3157,7 +3156,7 @@ header.skin-care .main-menu ul > li ul.sub-menu {
   top: 59px;
   margin: 0;
   display: none;
-  min-width: 280px;
+  width: fit-content;
   background: #030e29f0;
   border: 1px solid #272727;
   text-align: left;
@@ -3216,6 +3215,7 @@ header.skin-care .main-menu ul > li ul.sub-menu > li > a {
   position: relative;
   border-radius: 0;
   border: none;
+  width: max-content;
 }
 header.skin-care .main-menu ul > li ul.sub-menu > li > a::after {
   content: "";
@@ -3271,6 +3271,7 @@ header.skin-care .main-menu ul > li ul.sub-menu > li:hover .dropdown-icon2 {
 }
 header.skin-care .main-menu ul > li ul.sub-menu > li.active > a {
   color: var(--white-color);
+  
 }
 header.skin-care .main-menu ul > li ul.sub-menu > li.active .dropdown-icon {
   color: var(--white-color);

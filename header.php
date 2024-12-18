@@ -69,59 +69,12 @@ if (isset($_SESSION["email"])) {
                 <ul class="menu-list">
                     <li class="active"><a href="index.php">HOME</a></li>
                     <li class="menu-item-has-children" class="active"><a class="drop-down" href="#">SHOP</a>
-                        <!-- <ul class="sub-menu" style="width: 200px !important;">
-                            <li class="menu-item-has-children"><a href="product-listing.php">Product Type</a>
-                                <ul class="sub-menu">
-                                    <li><a href="product-listing.php">I am new</a></li>
-                                    <li><a href="product-listing.php">I am new</a></li>
-                                    <li><a href="product-listing.php">I am new</a></li>
-                                    <li><a href="product-listing.php">I am new</a></li>
-                                    <li><a href="product-listing.php">I am new</a></li>
-                                    <li><a href="product-listing.php">I am new</a></li>
-                                </ul>
-                            </li>
-                            <li class="menu-item-has-children"><a href="product-listing.php">Skin Concern</a>
-                                <ul class="sub-menu">
-                                    <li><a href="product-listing.php">I am new</a></li>
-                                    <li><a href="product-listing.php">I am new</a></li>
-                                    <li><a href="product-listing.php">I am new</a></li>
-                                    <li><a href="product-listing.php">I am new</a></li>
-                                    <li><a href="product-listing.php">I am new</a></li>
-                                    <li><a href="product-listing.php">I am new</a></li>
-                                </ul>
-                            </li>
-                            <li class="menu-item-has-children"><a href="product-listing.php">Skin Type</a>
-                                <ul class="sub-menu">
-                                    <li><a href="product-listing.php">I am new</a></li>
-                                    <li><a href="product-listing.php">I am new</a></li>
-                                    <li><a href="product-listing.php">I am new</a></li>
-                                    <li><a href="product-listing.php">I am new</a></li>
-                                    <li><a href="product-listing.php">I am new</a></li>
-                                    <li><a href="product-listing.php">I am new</a></li>
-                                </ul>
-                            </li>
-                            <li class="menu-item-has-children"><a href="product-listing.php">Popular Brands</a>
-                                <ul class="sub-menu">
-                                    <li><a href="product-listing.php">I am new</a></li>
-                                    <li><a href="product-listing.php">I am new</a></li>
-                                    <li><a href="product-listing.php">I am new</a></li>
-                                    <li><a href="product-listing.php">I am new</a></li>
-                                    <li><a href="product-listing.php">I am new</a></li>
-                                    <li><a href="product-listing.php">I am new</a></li>
-                                </ul>
-                            </li>
-                            <li class="menu-item-has-children"><a href="product-listing.php">Collection</a>
-                                <ul class="sub-menu">
-                                    <li><a href="product-listing.php">I am new</a></li>
-                                    <li><a href="product-listing.php">I am new</a></li>
-                                    <li><a href="product-listing.php">I am new</a></li>
-                                    <li><a href="product-listing.php">I am new</a></li>
-                                    <li><a href="product-listing.php">I am new</a></li>
-                                    <li><a href="product-listing.php">I am new</a></li>
-                                </ul>
-                            </li>
-                        </ul> -->
-                       
+                        <ul class="sub-menu d-flex flex-row">
+                            <li><a href="../index.html">Hair Salon</a></li>
+                            <li><a href="../beauty-spa/beauty-spa.html">Beauty &amp; Spa</a></li>
+                            <li class="active"><a href="index.html">Skin Care</a></li>
+                            <li><a href="../nail-salon/nail-salon.html">Nail Salon</a></li>
+                        </ul>
                     </li>
                     <li><a href="our-story.php">AUREA DIARIES</a></li>
                     <li><a href="product-listing.php">SALE & OFFERS</a></li>
