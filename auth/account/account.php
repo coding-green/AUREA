@@ -11,6 +11,7 @@ if (!isset($_SESSION['email'])) {
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -23,21 +24,24 @@ if (!isset($_SESSION['email'])) {
       height: 100vh;
       width: 100vw;
     }
+
     .user-account {
       width: 100%;
       margin: auto 100px;
-      display: flex;  
+      display: flex;
       flex-direction: column;
       align-items: flex-start;
     }
-    .user-account__content{
+
+    .user-account__content {
       width: 100%;
       gap: 60%;
       display: flex;
       align-items: center;
       justify-content: space-between;
     }
-    .user-account__info{
+
+    .user-account__info {
       display: flex;
       flex-direction: column;
       align-items: flex-start;
@@ -45,11 +49,13 @@ if (!isset($_SESSION['email'])) {
       width: 100%;
       padding: 30px 0px;
     }
-    .customer__title{
+
+    .customer__title {
       font-size: 30px;
       font-weight: 600;
     }
-    .user-account__info a{
+
+    .user-account__info a {
       text-decoration: none;
       color: black;
       display: flex;
@@ -57,36 +63,43 @@ if (!isset($_SESSION['email'])) {
       gap: 10px;
       cursor: pointer;
     }
-    .svg-wrapper{
+
+    .svg-wrapper {
       height: 26px;
       width: 26px;
     }
+
     @media (max-width: 768px) {
-      .user-account__info{
+      .user-account__info {
         gap: 20px;
       }
-      .user-account__info a{
+
+      .user-account__info a {
         gap: 5px;
       }
-      .user-account__content{
+
+      .user-account__content {
         flex-direction: column;
         align-items: flex-start;
         gap: 40%;
       }
     }
+
     @media (max-width: 480px) {
-      .user-account__info{
+      .user-account__info {
         flex-direction: column;
         align-items: flex-start;
       }
-      .user-account__info a{
+
+      .user-account__info a {
         margin: 10px 0px;
       }
     }
   </style>
 </head>
+
 <body>
-<main class="main-content">
+  <main class="main-content">
     <div class="user-account">
       <div class="user-account__info">
         <h1 class="customer__title">Account</h1>
@@ -131,10 +144,8 @@ if (!isset($_SESSION['email'])) {
     window.location.href = "../login.php";
   }
 
-</script> -->
+
+</script>
 </body>
+
 </html>
-
-
-
-

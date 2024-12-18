@@ -2,14 +2,69 @@
 include_once("header.php");
 include_once("config.php");
 
+
+function getClientIP()
+{
+
+    if (!empty($_SERVER['HTTP_CLIENT_IP'])) {
+        return $_SERVER['HTTP_CLIENT_IP'];
+    } elseif (!empty($_SERVER['HTTP_X_FORWARDED_FOR'])) {
+        return $_SERVER['HTTP_X_FORWARDED_FOR'];
+    } else {
+        return $_SERVER['REMOTE_ADDR'];
+    }
+}
+
+function getCountryFromIP($ip)
+{
+    $accessKey = '28fc85b3730c66';
+    $geoData = file_get_contents("http://ipinfo.io/{$ip}/json?token={$accessKey}");
+    $location = json_decode($geoData);
+    return $location->country;
+}
+
+function getCurrencyExchangeRates()
+{
+    $apiUrl = "https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@latest/v1/currencies/usd.json";
+    $exchangeData = file_get_contents($apiUrl);
+    $decodedData = json_decode($exchangeData, true);
+
+    return $decodedData['usd'];
+}
+
+
+$ip = getClientIP();
+if ($ip) {
+    $ip = "178.238.11.6";
+}
+// $ip = "125.22.51.250";
+$ip = "178.238.11.6";
+$country = getCountryFromIP($ip);
+$exchangeRates = getCurrencyExchangeRates();
+$priceInUSD = 10;
+$currencyCodes = [
+    'US' => 'usd',
+    'IN' => 'inr',
+    'GB' => 'gbp',
+    'CA' => 'cad'
+];
+$currencyCode = isset($currencyCodes[$country]) ? $currencyCodes[$country] : 'USD';
+$exchangeRate = isset($exchangeRates[$currencyCode]) ? $exchangeRates[$currencyCode] : 1;
+$priceInSelectedCurrency = $priceInUSD * $exchangeRate;
+// function roundUp($value, $step = 100)
+// {
+//     return ceil($value / $step) * $step;
+// }
+$roundedceilvalue = round($exchangeRate * 100);
+
 $params = [
     'type' => isset($_GET['type']) ? $_GET['type'] : '',
     'name' => isset($_GET['name']) ? $_GET['name'] : '',
     'brand' => isset($_GET['brand']) ? $_GET['brand'] : '',
     'skin_type' => isset($_GET['skin_type']) ? $_GET['skin_type'] : '',
-    'price_min' => isset($_GET['price_min']) ? $_GET['price_min'] : '',
-    'price_max' => isset($_GET['price_max']) ? $_GET['price_max'] : '',
-    'skin_concern' => isset($_GET['skin_concern']) ? $_GET['skin_concern'] : ''
+    'price_min' => isset($_GET['price_min']) ? $_GET['price_min'] / $exchangeRate : '',
+    'price_max' => isset($_GET['price_max']) ? $_GET['price_max'] / $exchangeRate : '',
+    'skin_concern' => isset($_GET['skin_concern']) ? $_GET['skin_concern'] : '',
 ];
 
 $sql = "SELECT * FROM products WHERE status = 'active'";
@@ -84,54 +139,6 @@ if ($result->num_rows > 0) {
 $stmt->close();
 $conn->close();
 
-function getClientIP()
-{
-
-    if (!empty($_SERVER['HTTP_CLIENT_IP'])) {
-        return $_SERVER['HTTP_CLIENT_IP'];
-    } elseif (!empty($_SERVER['HTTP_X_FORWARDED_FOR'])) {
-        return $_SERVER['HTTP_X_FORWARDED_FOR'];
-    } else {
-        return $_SERVER['REMOTE_ADDR'];
-    }
-}
-
-function getCountryFromIP($ip)
-{
-    $accessKey = '28fc85b3730c66';
-    $geoData = file_get_contents("http://ipinfo.io/{$ip}/json?token={$accessKey}");
-    $location = json_decode($geoData);
-    return $location->country;
-}
-
-function getCurrencyExchangeRates()
-{
-    $apiUrl = "https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@latest/v1/currencies/usd.json";
-    $exchangeData = file_get_contents($apiUrl);
-    $decodedData = json_decode($exchangeData, true);
-
-    return $decodedData['usd'];
-}
-
-
-$ip = getClientIP();
-if ($ip) {
-    $ip = "178.238.11.6";
-}
-$ip = "125.22.51.250";
-// $ip = "178.238.11.6";
-$country = getCountryFromIP($ip);
-$exchangeRates = getCurrencyExchangeRates();
-$priceInUSD = 10;
-$currencyCodes = [
-    'US' => 'usd',
-    'IN' => 'inr',
-    'GB' => 'gbp',
-    'CA' => 'cad'
-];
-$currencyCode = isset($currencyCodes[$country]) ? $currencyCodes[$country] : 'USD';
-$exchangeRate = isset($exchangeRates[$currencyCode]) ? $exchangeRates[$currencyCode] : 1;
-$priceInSelectedCurrency = $priceInUSD * $exchangeRate;
 
 ?>
 <div style="background-color:#020101;backdrop-filter: blur(30px);height:135px">
@@ -292,69 +299,18 @@ $priceInSelectedCurrency = $priceInUSD * $exchangeRate;
                             </div>
                         </form>
                     </div>
-                    <!-- <div class="single-widgets style-2 mb-25">
-                        <div class="widget-title">
-                            <h5>Cart</h5>
-                        </div>
-                        <div class="cart-menu">
-                            <ul class="product-list">
-                                <li class="single-product">
-                                    <div class="product-img">
-                                        <img src="assets/image/beauty-spa/product-page-sidebar/sidebar-image.png"
-                                            alt="">
-                                        <button type="reset" class="close-btn"><i class="bi bi-x"></i></button>
-                                    </div>
-                                    <div class="content">
-                                        <h6><a href="product-details.php">ordinary niacinamide 10% + zinc 1%</a>
-                                        </h6>
-                                        <span>2 x $190.00</span>
-                                    </div>
-                                </li>
-                                <li class="single-product">
-                                    <div class="product-img">
-                                        <img src="assets/image/beauty-spa/product-page-sidebar/sidebar-image2.png"
-                                            alt="">
-                                        <button type="reset" class="close-btn"><i class="bi bi-x"></i></button>
-                                    </div>
-                                    <div class="content">
-                                        <h6><a href="product-details.php">ordinary niacinamide 10% + zinc 1%</a>
-                                        </h6>
-                                        <span>1 x $148.00</span>
-                                    </div>
-                                </li>
-                            </ul>
-                            <div class="total-price">
-                                <span>Subtotal</span>
-                                <strong>$528.00</strong>
-                            </div>
-                            <div class="btn-area">
-                                <a href="cart.html" class="primary-btn1 black mb-20">View Cart
-                                    <svg class="arrow" width="10" height="10" viewBox="0 0 10 10" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path
-                                            d="M1 9L9 1M9 1C7.22222 1.33333 3.33333 2 1 1M9 1C8.66667 2.66667 8 6.33333 9 9"
-                                            stroke="#1E1E1E" stroke-width="1.5" stroke-linecap="round"></path>
-                                    </svg>
-                                </a>
-                                <a href="checkout.html" class="primary-btn1">
-                                    Processed Checkout
-                                </a>
-                            </div>
-                        </div>
-                    </div> -->
                     <div class="main">
-
                         <div class="price-input-container">
                             <div class="price-input">
                                 <div class="price-field">
                                     <input type="number"
                                         class="min-input"
-                                        value="2500">
+                                        value="<?php echo isset($_GET['price_min']) ? $_GET['price_min'] : 0; ?>">
                                 </div>
                                 <div class="price-field">
                                     <input type="number"
                                         class="max-input"
-                                        value="8500">
+                                        value="<?php echo isset($_GET['price_max']) ? $_GET['price_max'] : $roundedceilvalue; ?>">
                                 </div>
                             </div>
                             <div class="slider-container">
@@ -368,14 +324,14 @@ $priceInSelectedCurrency = $priceInUSD * $exchangeRate;
                             <input type="range"
                                 class="min-range"
                                 min="0"
-                                max="10000"
-                                value="2500"
+                                max="<?php echo $roundedceilvalue ?>"
+                                value="<?php echo isset($_GET['price_min']) ? $_GET['price_min'] : 0; ?>"
                                 step="1">
                             <input type="range"
                                 class="max-range"
                                 min="0"
-                                max="10000"
-                                value="8500"
+                                max="<?php echo $roundedceilvalue ?>"
+                                value="<?php echo isset($_GET['price_max']) ? $_GET['price_max'] : 0; ?>"
                                 step="1">
                         </div>
                     </div>
@@ -494,6 +450,43 @@ $priceInSelectedCurrency = $priceInUSD * $exchangeRate;
     </div>
 </div>
 </div>
+<script>
+    const rangeInput = document.querySelectorAll(".range-input input");
+    const priceInput = document.querySelectorAll(".price-input input");
+
+    function updateInputValues() {
+        const minRange = parseInt(rangeInput[0].value);
+        const maxRange = parseInt(rangeInput[1].value);
+
+        priceInput[0].value = minRange;
+        priceInput[1].value = maxRange;
+    }
+
+    function updateQueryString() {
+        const minPrice = parseInt(priceInput[0].value);
+        const maxPrice = parseInt(priceInput[1].value);
+
+        const urlParams = new URLSearchParams(window.location.search);
+        urlParams.set('price_min', minPrice);
+        urlParams.set('price_max', maxPrice);
+
+        window.location.search = urlParams;
+    }
+
+    rangeInput.forEach(input => {
+        input.addEventListener("change", () => {
+            updateInputValues();
+            updateQueryString();
+        });
+    });
+
+    priceInput.forEach(input => {
+        input.addEventListener("change", () => {
+            updateQueryString();
+        });
+    });
+</script>
+
 
 <?php
 include_once("footer.php")
