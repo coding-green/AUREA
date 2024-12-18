@@ -66,7 +66,7 @@
         color: #555;
         align-self: start;
         margin-left: -5px;
-    }
+      }
 
       input,
       select,

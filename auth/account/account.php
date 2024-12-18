@@ -1,3 +1,14 @@
+<?php
+session_start();
+
+// Check if the user is already logged in
+if (!isset($_SESSION['email'])) {
+    header('Location: ../../index.php');
+    exit;
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -79,7 +90,7 @@
     <div class="user-account">
       <div class="user-account__info">
         <h1 class="customer__title">Account</h1>
-        <a onclick="logout()">
+        <a onclick=" window.location.href='logout.php'">
           <span class="svg-wrapper">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" class="icon icon-account"
               viewBox="0 0 18 19">
@@ -112,7 +123,7 @@
       </div>
     </div>
 </main>
-<script>
+<!-- <script>
   // write code for logout
 
   function logout() {
@@ -120,8 +131,7 @@
     window.location.href = "../login.php";
   }
 
-
-</script>
+</script> -->
 </body>
 </html>
 
