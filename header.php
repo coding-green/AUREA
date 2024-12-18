@@ -1,9 +1,9 @@
 <?php
 session_start();
-if(isset($_SESSION["email"])){
-    $link="auth/account/account.php";
-}else {
-    $link="auth/login.php";
+if (isset($_SESSION["email"])) {
+    $link = "auth/account/account.php";
+} else {
+    $link = "auth/login.php";
 }
 ?>
 
@@ -29,6 +29,7 @@ if(isset($_SESSION["email"])){
     <link rel="stylesheet" href="assets/css/style.css">
     <title>Aurea Bliss</title>
     <link rel="icon" href="assets/image/icon/favi.png" type="image/gif" sizes="20x20">
+
 </head>
 
 <body>
@@ -68,7 +69,7 @@ if(isset($_SESSION["email"])){
                 <ul class="menu-list">
                     <li class="active"><a href="index.php">HOME</a></li>
                     <li class="menu-item-has-children" class="active"><a class="drop-down" href="#">SHOP</a>
-                        <ul class="sub-menu" style="width: 200px !important;">
+                        <!-- <ul class="sub-menu" style="width: 200px !important;">
                             <li class="menu-item-has-children"><a href="product-listing.php">Product Type</a>
                                 <ul class="sub-menu">
                                     <li><a href="product-listing.php">I am new</a></li>
@@ -119,7 +120,8 @@ if(isset($_SESSION["email"])){
                                     <li><a href="product-listing.php">I am new</a></li>
                                 </ul>
                             </li>
-                        </ul>
+                        </ul> -->
+                       
                     </li>
                     <li><a href="our-story.php">AUREA DIARIES</a></li>
                     <li><a href="product-listing.php">SALE & OFFERS</a></li>

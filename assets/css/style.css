@@ -3061,6 +3061,67 @@ header.skin-care .main-menu ul > li > a {
   position: relative;
   line-height: 1;
 }
+
+.menu-container {
+  max-width: 1200px;
+  margin: 20px auto;
+  background-color: #ffffff;
+  border-radius: 5px;
+  border: 0.2px solid grey;
+  box-shadow: 3px 3px 1px whitesmoke;
+}
+
+.menu-row {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.menu-col {
+  flex: 1;
+  min-width: 220px;
+  margin: 10px;
+  padding-left: 20px;
+  border-right: 0.1px solid darkgrey;
+}
+
+.menu-col:last-child {
+  border-right: none;
+}
+
+.menu-dropdown-header {
+  font-size: 18px;
+  margin: 15px 0;
+  font-weight: 600;
+}
+
+.menu-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+.menu-list li {
+  width: 100%;
+  margin: 5px 0;
+}
+
+.menu-list a {
+  color: black !important;
+}
+
+.menu-dropdown-item {
+  display: block;
+  color: #333;
+  text-decoration: none;
+  margin: 5px 0;
+  padding: 5px 0;
+  font-size: 15px;
+}
+
+.menu-dropdown-item:hover {
+  color: #0056b3;
+  text-decoration: underline;
+}
 @media (max-width: 991px) {
   header.skin-care .main-menu ul > li > a {
     padding: 32px 9px;
