@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Account Management</title>
   <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
 
   <div class="container">
@@ -21,21 +23,21 @@
 
     <div class="main-content">
       <!-- Personal Information Section -->
-      <section id="personal-info" class="section">
+      <section id="personal-info" class="section active">
         <h2 class="secondary-color">Personal Information</h2>
         <form id="personal-info-form">
           <label for="name">Full Name:</label>
           <input type="text" id="name">
-          
+
           <label for="email">Email Address:</label>
-          <input type="email" id="email" >
-          
+          <input type="email" id="email">
+
           <label for="phone">Phone Number:</label>
-          <input type="text" id="phone" >
-          
+          <input type="text" id="phone">
+
           <label for="address">Shipping Address:</label>
           <textarea id="address"></textarea>
-          
+
           <button type="submit" class="btn-primary">Update Info</button>
         </form>
       </section>
@@ -49,10 +51,10 @@
 
           <label for="password">Change Password:</label>
           <input type="password" id="password" placeholder="Enter new password">
-          
+
           <label for="confirm-password">Confirm Password:</label>
           <input type="password" id="confirm-password" placeholder="Confirm new password">
-          
+
           <button type="submit" class="btn-primary">Save Changes</button>
         </form>
       </section>
@@ -77,4 +79,5 @@
 
   <script src="script.js"></script>
 </body>
+
 </html>

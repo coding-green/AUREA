@@ -1,6 +1,8 @@
 <?php
 include_once("header.php");
 include_once("config.php");
+
+
 function getClientIP()
 {
 
@@ -62,7 +64,7 @@ $params = [
     'skin_type' => isset($_GET['skin_type']) ? $_GET['skin_type'] : '',
     'price_min' => isset($_GET['price_min']) ? $_GET['price_min'] / $exchangeRate : '',
     'price_max' => isset($_GET['price_max']) ? $_GET['price_max'] / $exchangeRate : '',
-    'skin_concern' => isset($_GET['skin_concern']) ? $_GET['skin_concern'] : ''
+    'skin_concern' => isset($_GET['skin_concern']) ? $_GET['skin_concern'] : '',
 ];
 
 $sql = "SELECT * FROM products WHERE status = 'active'";

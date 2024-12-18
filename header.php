@@ -48,7 +48,7 @@
         </div>
         <header class="header-area skin-care">
             <div class="header-logo">
-                <a href="index.html"><img alt="image" class="img-fluid" src="assets/image/icon/light-logo.png"
+                <a href="index.php"><img alt="image" class="img-fluid" src="assets/image/icon/light-logo.png"
                         style="width:150px"></a>
             </div>
             <div class="main-menu">
@@ -121,9 +121,9 @@
                 </ul>
                 <div class="d-xl-none d-block">
                     <div class="mobile-search-area mb-30">
-                        <form>
+                        <form id="searchForm" action="product-listing.php" method="get">
                             <div class="form-inner">
-                                <input type="text" placeholder="Enter your keywords">
+                                <input type="text" id="searchInput" name="name" placeholder="Enter your keywords" required>
                                 <button type="submit" class="primary-btn1">Search Now</button>
                             </div>
                         </form>
@@ -142,10 +142,10 @@
                             </div>
                             <div class="search-input">
                                 <div class="serch-close"></div>
-                                <form>
+                                <form action="product-listing.php" method="get">
                                     <div class="search-group">
                                         <div class="form-inner2">
-                                            <input type="text" placeholder="Enter your keywords">
+                                            <input type="text" name="name" placeholder="Enter your keywords">
                                             <button type="submit"><i class="bi bi-search"></i></button>
                                         </div>
                                     </div>
@@ -196,4 +196,3 @@
             </div>
         </header>
     </div>
-    <!-- hearder section ends here -->
