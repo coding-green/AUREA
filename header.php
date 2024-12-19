@@ -90,11 +90,10 @@ if (isset($_SESSION["email"])) {
                         </ul>
                     </li>
                     <li><a href="our-story.php">AUREA DIARIES</a></li>
-                    <li><a href="product-listing.php">SALE & OFFERS</a></li>
-                    <li><a href="product-listing.php">AUREA COLLECTION</a></li>
+                    <li><a href="product-listing.php">SALES</a></li>
                     <li><a href="product-listing.php">WHY WE ARE DIFFERENT</a></li>
                     <li><a href="product-listing.php">FAQ</a></li>
-                    <li><a href="product-listing.php">SKIN ANALYSIS</a></li>
+                    <!-- <li><a href="product-listing.php">SKIN ANALYSIS</a></li> -->
                 </ul>
                 <div class="d-xl-none d-block">
                     <div class="mobile-search-area mb-30">
