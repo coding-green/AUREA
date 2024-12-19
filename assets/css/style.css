@@ -3099,14 +3099,26 @@ header.skin-care .main-menu ul > li ul.sub-menu {
   background: #030e29f0;
   border: 1px solid #272727;
   text-align: left;
-  padding: 25px 0;
+  padding: 20px 18px;
+  z-index: 10;
 }
-header.skin-care .main-menu ul > li ul.sub-menu > li {
+.sub-menu-heading{
+  color: white;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 16px;
+  margin-left: 12px;
+}
+header.skin-care .main-menu ul > li ul.sub-menu div{
+  display: flex;
+}
+header.skin-care .main-menu ul > li ul.sub-menu div > li {
   padding: 0;
   display: block;
   position: relative;
+  width: 180px;
 }
-header.skin-care .main-menu ul > li ul.sub-menu > li i {
+header.skin-care .main-menu ul > li ul.sub-menu div > li i {
   position: absolute;
   top: 10px;
   right: 6px;
@@ -3114,7 +3126,7 @@ header.skin-care .main-menu ul > li ul.sub-menu > li i {
   color: var(--white-color);
   font-size: 20px;
 }
-header.skin-care .main-menu ul > li ul.sub-menu > li .dropdown-icon {
+header.skin-care .main-menu ul > li ul.sub-menu div > li .dropdown-icon {
   color: rgba(255, 255, 255, 0.7);
   opacity: 1;
   top: 10px;
@@ -3122,14 +3134,14 @@ header.skin-care .main-menu ul > li ul.sub-menu > li .dropdown-icon {
   right: 15px;
 }
 @media (max-width: 1199px) {
-  header.skin-care .main-menu ul > li ul.sub-menu > li .dropdown-icon {
+  header.skin-care .main-menu ul > li ul.sub-menu div > li .dropdown-icon {
     right: 0;
     color: rgba(255, 255, 255, 0.7);
     top: 6px;
     font-size: 20px;
   }
 }
-header.skin-care .main-menu ul > li ul.sub-menu > li .dropdown-icon2 {
+header.skin-care .main-menu ul > li ul.sub-menu div > li .dropdown-icon2 {
   color: rgba(255, 255, 255, 0.7);
   opacity: 1;
   top: 14px;
@@ -3137,15 +3149,15 @@ header.skin-care .main-menu ul > li ul.sub-menu > li .dropdown-icon2 {
   font-size: 13px;
 }
 @media (max-width: 1199px) {
-  header.skin-care .main-menu ul > li ul.sub-menu > li .dropdown-icon2::before {
+  header.skin-care .main-menu ul > li ul.sub-menu div > li .dropdown-icon2::before {
     content: "\f4fe";
   }
 }
-header.skin-care .main-menu ul > li ul.sub-menu > li > a {
+header.skin-care .main-menu ul > li ul.sub-menu div > li > a {
   display: block;
-  padding: 9px 34px;
+  padding: 9px 14px;
   font-family: var(--font-dm-sans);
-  color: rgba(255, 255, 255, 0.7);
+  color: #eee;
   font-weight: 500;
   text-transform: uppercase;
   font-size: 13px;
@@ -3154,9 +3166,9 @@ header.skin-care .main-menu ul > li ul.sub-menu > li > a {
   position: relative;
   border-radius: 0;
   border: none;
-  width: max-content;
+  width: fit-content;
 }
-header.skin-care .main-menu ul > li ul.sub-menu > li > a::after {
+header.skin-care .main-menu ul > li ul.sub-menu div > li > a::after {
   content: "";
   height: 8px;
   width: 8px;
@@ -3170,55 +3182,55 @@ header.skin-care .main-menu ul > li ul.sub-menu > li > a::after {
   transition: all 0.4s ease-out 0s;
 }
 @media (max-width: 991px) {
-  header.skin-care .main-menu ul > li ul.sub-menu > li > a::after {
+  header.skin-care .main-menu ul > li ul.sub-menu div > li > a::after {
     left: 0;
   }
 }
 @media (min-width: 1200px) {
-  header.skin-care .main-menu ul > li ul.sub-menu > li > a:hover {
+  header.skin-care .main-menu ul > li ul.sub-menu div > li > a:hover {
     color: #CACACA;
     padding-left: 44px;
   }
 }
 @media (min-width: 1200px) and (max-width: 991px) {
-  header.skin-care .main-menu ul > li ul.sub-menu > li > a:hover {
+  header.skin-care .main-menu ul > li ul.sub-menu div > li > a:hover {
     padding-left: 18px;
   }
 }
 @media (min-width: 1200px) {
-  header.skin-care .main-menu ul > li ul.sub-menu > li > a:hover::before {
+  header.skin-care .main-menu ul > li ul.sub-menu div > li > a:hover::before {
     transform: scale(1);
   }
-  header.skin-care .main-menu ul > li ul.sub-menu > li > a:hover::after {
+  header.skin-care .main-menu ul > li ul.sub-menu div > li > a:hover::after {
     opacity: 1;
   }
 }
-header.skin-care .main-menu ul > li ul.sub-menu > li > a.active {
+header.skin-care .main-menu ul > li ul.sub-menu div > li > a.active {
   color: #CACACA;
 }
-header.skin-care .main-menu ul > li ul.sub-menu > li > a.active::before {
+header.skin-care .main-menu ul > li ul.sub-menu div > li > a.active::before {
   transform: scale(1);
 }
-header.skin-care .main-menu ul > li ul.sub-menu > li:hover > a {
+header.skin-care .main-menu ul > li ul.sub-menu div > li:hover > a {
   color: #fff;
 }
-header.skin-care .main-menu ul > li ul.sub-menu > li:hover .dropdown-icon {
+header.skin-care .main-menu ul > li ul.sub-menu div > li:hover .dropdown-icon {
   color: var(--white-color);
 }
-header.skin-care .main-menu ul > li ul.sub-menu > li:hover .dropdown-icon2 {
+header.skin-care .main-menu ul > li ul.sub-menu div > li:hover .dropdown-icon2 {
   color: var(--white-color);
 }
-header.skin-care .main-menu ul > li ul.sub-menu > li.active > a {
+header.skin-care .main-menu ul > li ul.sub-menu div > li.active > a {
   color: var(--white-color);
   
 }
-header.skin-care .main-menu ul > li ul.sub-menu > li.active .dropdown-icon {
+header.skin-care .main-menu ul > li ul.sub-menu div > li.active .dropdown-icon {
   color: var(--white-color);
 }
-header.skin-care .main-menu ul > li ul.sub-menu > li.active .dropdown-icon2 {
+header.skin-care .main-menu ul > li ul.sub-menu div > li.active .dropdown-icon2 {
   color: var(--white-color);
 }
-header.skin-care .main-menu ul > li ul.sub-menu > li .sub-menu {
+header.skin-care .main-menu ul > li ul.sub-menu div > li .sub-menu {
   left: 100%;
   position: absolute;
   max-width: 280px;
@@ -3227,12 +3239,12 @@ header.skin-care .main-menu ul > li ul.sub-menu > li .sub-menu {
   box-shadow: 0px 30px 80px rgba(8, 0, 42, 0.08);
   top: 0;
 }
-header.skin-care .main-menu ul > li ul.sub-menu > li .sub-menu::before {
+header.skin-care .main-menu ul > li ul.sub-menu div > li .sub-menu::before {
   display: none;
   visibility: hidden;
 }
 @media (max-width: 1199px) {
-  header.skin-care .main-menu ul > li ul.sub-menu > li .sub-menu {
+  header.skin-care .main-menu ul > li ul.sub-menu div > li .sub-menu {
     margin-left: 10px;
     position: unset;
     max-width: 230px;
@@ -3241,10 +3253,10 @@ header.skin-care .main-menu ul > li ul.sub-menu > li .sub-menu::before {
     top: 0;
   }
 }
-header.skin-care .main-menu ul > li ul.sub-menu > li .sub-menu > li i {
+header.skin-care .main-menu ul > li ul.sub-menu div > li .sub-menu > li i {
   display: block;
 }
-header.skin-care .main-menu ul > li ul.sub-menu > li:last-child {
+header.skin-care .main-menu ul > li ul.sub-menu div > li:last-child {
   border-bottom: none;
 }
 @media (max-width: 1199px) {

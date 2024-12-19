@@ -68,11 +68,25 @@ if (isset($_SESSION["email"])) {
                 <ul class="menu-list">
                     <li class="active"><a href="index.php">HOME</a></li>
                     <li class="menu-item-has-children" class="active"><a class="drop-down" href="#">SHOP</a>
-                        <ul class="sub-menu d-flex flex-row">
-                            <li><a href="../index.html">Hair Salon</a></li>
-                            <li><a href="../beauty-spa/beauty-spa.html">Beauty &amp; Spa</a></li>
-                            <li class="active"><a href="index.html">Skin Care</a></li>
-                            <li><a href="../nail-salon/nail-salon.html">Nail Salon</a></li>
+                        <ul class="sub-menu">
+                            <div class="d-flex flex-row">
+                                <li>
+                                    <h5 class="sub-menu-heading">Product Type</h5>
+                                    <a href="../beauty-spa/beauty-spa.html">Eye & Lip care</a>
+                                </li>
+                                <li class="active">
+                                    <h5 class="sub-menu-heading">Skin Concern</h5>
+                                    <a href="index.html">Dark spot & pigmentation</a>
+                                </li>
+                                <li>
+                                    <h5 class="sub-menu-heading">Skin Type</h5>
+                                    <a href="../nail-salon/nail-salon.html">Normal Skin</a>
+                                </li>
+                                <li>
+                                    <h5 class="sub-menu-heading">Popular Brands</h5>
+                                    <a href="../index.html">Cerva</a>
+                                </li>
+                            </div>
                         </ul>
                     </li>
                     <li><a href="our-story.php">AUREA DIARIES</a></li>
