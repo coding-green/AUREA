@@ -29,7 +29,6 @@ if (isset($_SESSION["email"])) {
     <link rel="stylesheet" href="assets/css/style.css">
     <title>Aurea Bliss</title>
     <link rel="icon" href="assets/image/icon/favi.png" type="image/gif" sizes="20x20">
-
 </head>
 
 <body>
