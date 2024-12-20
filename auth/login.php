@@ -17,7 +17,6 @@ if (isset($_SESSION['email'])) {
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
   <div class="container" >
     <h1 class="primary-color">Login</h1>
     <form id="loginForm" action="login_handle.php" method="POST">
