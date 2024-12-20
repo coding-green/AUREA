@@ -1,9 +1,9 @@
 <?php
 session_start();
-if (isset($_SESSION["email"])) {
-    $link = "auth/account/account.php";
+if (isset($_SESSION["id"])) {
+    $link = 'onclick="window.location.href=\'auth/account/account.php\'"';
 } else {
-    $link = "auth/login.php";
+    $link = 'data-bs-target="#popup-auth-product-view"';
 }
 ?>
 
@@ -32,6 +32,57 @@ if (isset($_SESSION["email"])) {
 </head>
 
 <body>
+    <!-- login popup modal start here -->
+
+    <div class="modal product-view-modal" id ="popup-auth-product-view">
+        <div class="modal-dialog modal-md modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="close-btn" data-bs-dismiss="modal"></div>
+                    <div class="product-details-page">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="popup-auth-container popup-auth-active" id="popup-auth-loginFormContainer">
+                                    <h1 class="popup-auth-title">Login</h1>
+                                    <form id="popup-auth-loginForm" action="auth/login_handle.php" method="POST">
+                                        <input type="email" id="popup-auth-loginEmail" name="email" placeholder="Enter your email" required>
+                                        <input type="password" id="popup-auth-loginPassword" name="password" placeholder="Enter your password" required>
+                                        <input type="submit" value="Login">
+                                    </form>
+                                    <p>Don't have an account? <span onclick="signupPopup()">Sign up</span></p>
+                                </div>
+                                <div class="popup-auth-container" id="popup-auth-signupFormContainer">
+                                    <h1 class="popup-auth-title">Sign Up</h1>
+                                    <form id="popup-auth-signupForm" action="auth/signup_handle.php" method="POST">
+                                        <input type="text" id="popup-auth-signupName" name="user_name" placeholder="Enter your name" required>
+                                        <input type="email" id="popup-auth-signupEmail" name="email" placeholder="Enter your email" required>
+                                        <input type="password" id="popup-auth-signupPassword" name="password" placeholder="Create a password" required>
+                                        <input type="password" id="popup-auth-confirmPassword" name="confirm_password" placeholder="Confirm a password" required>
+                                        <input type="submit" value="Sign Up">
+                                    </form>
+                                    <p>Already have an account? <span onclick="loginPopup()">Login</span></p>
+                                </div>
+                                <script>
+                                    function loginPopup() {
+                                        document.getElementById("popup-auth-signupFormContainer").classList.remove("popup-auth-active");
+                                        document.getElementById("popup-auth-loginFormContainer").classList.add("popup-auth-active");
+                                    }
+                                    function signupPopup() {
+                                        document.getElementById("popup-auth-loginFormContainer").classList.remove("popup-auth-active");
+                                        document.getElementById("popup-auth-signupFormContainer").classList.add("popup-auth-active");
+                                    }
+                                </script>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- login popup modal end here -->
+
     <!-- hearder section strats here -->
     <div class="skin-header-topbar-wrap">
         <div class="skin-care-topbar d-sm-block d-none">
@@ -142,7 +193,7 @@ if (isset($_SESSION["email"])) {
                         </div>
                     </li>
                     <li>
-                        <div class="user" onclick="window.location.href='<?php echo $link ?>'">
+                        <div class="user" data-bs-toggle="modal" <?php echo $link; ?>>
                             <svg width="18" height="18" viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg">
                                 <path
                                     d="M11.7135 8.34627C12.8653 7.50628 13.6153 6.14686 13.6153 4.61538C13.6153 2.07046 11.5448 0 8.99989 0C6.45497 0 4.38451 2.07046 4.38451 4.61538C4.38451 6.14686 5.1345 7.50628 6.28629 8.34627C3.42316 9.44191 1.38452 12.2179 1.38452 15.4615C1.38452 16.8613 2.52327 18 3.92298 18H14.0768C15.4765 18 16.6153 16.8613 16.6153 15.4615C16.6153 12.2179 14.5766 9.44191 11.7135 8.34627ZM5.76914 4.61538C5.76914 2.83395 7.21845 1.38463 8.99989 1.38463C10.7813 1.38463 12.2306 2.83395 12.2306 4.61538C12.2306 6.39682 10.7813 7.84617 8.99989 7.84617C7.21845 7.84617 5.76914 6.39682 5.76914 4.61538ZM14.0768 16.6154H3.92298C3.28676 16.6154 2.76915 16.0978 2.76915 15.4615C2.76915 12.0258 5.56421 9.23073 8.99993 9.23073C12.4356 9.23073 15.2307 12.0258 15.2307 15.4615C15.2307 16.0978 14.7131 16.6154 14.0768 16.6154Z" />

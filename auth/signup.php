@@ -17,19 +17,16 @@ if (isset($_SESSION['email'])) {
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-  <div class="container">
-    <h1 class="primary-color">Sign Up</h1>
-    <form id="signupForm" action="signup_handle.php" method="POST">
-      <input type="text" id="signupName" name="user_name" placeholder="Enter your name" required>
-      <input type="email" id="signupEmail" name="email" placeholder="Enter your email" required>
-      <input type="password" id="signupPassword" name="password" placeholder="Create a password" required>
-      <input type="password" id="confirmPassword" name="confirm_password" placeholder="Confirm a password" required>
+  <div class="popup-auth-container">
+    <h1 class="popup-auth-title">Sign Up</h1>
+    <form id="popup-auth-signupForm" action="signup_handle.php" method="POST">
+      <input type="text" id="popup-auth-signupName" name="user_name" placeholder="Enter your name" required>
+      <input type="email" id="popup-auth-signupEmail" name="email" placeholder="Enter your email" required>
+      <input type="password" id="popup-auth-signupPassword" name="password" placeholder="Create a password" required>
+      <input type="password" id="popup-auth-confirmPassword" name="confirm_password" placeholder="Confirm a password" required>
       <input type="submit" value="Sign Up">
     </form>
     <p>Already have an account? <a href="login.php">Login</a></p>
   </div>
-
-  <!-- <script src="script.js"></script> -->
 </body>
 </html>

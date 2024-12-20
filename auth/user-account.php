@@ -12,7 +12,7 @@
 
   <div class="container">
     <div class="sidebar">
-      <h2 class="primary-color">Account</h2>
+      <h1 class="primary-color">Account</h1>
       <ul>
         <li><a href="#" class="nav-link" data-target="personal-info">Personal Information</a></li>
         <li><a href="#" class="nav-link" data-target="security-privacy">Security & Privacy</a></li>
