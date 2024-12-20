@@ -1,61 +1,7 @@
 <?php
 include_once("header.php");
 include_once("config.php");
-
-
-function getClientIP()
-{
-
-    if (!empty($_SERVER['HTTP_CLIENT_IP'])) {
-        return $_SERVER['HTTP_CLIENT_IP'];
-    } elseif (!empty($_SERVER['HTTP_X_FORWARDED_FOR'])) {
-        return $_SERVER['HTTP_X_FORWARDED_FOR'];
-    } else {
-        return $_SERVER['REMOTE_ADDR'];
-    }
-}
-
-function getCountryFromIP($ip)
-{
-    $accessKey = '28fc85b3730c66';
-    $geoData = file_get_contents("http://ipinfo.io/{$ip}/json?token={$accessKey}");
-    $location = json_decode($geoData);
-    return $location->country;
-}
-
-function getCurrencyExchangeRates()
-{
-    $apiUrl = "https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@latest/v1/currencies/usd.json";
-    $exchangeData = file_get_contents($apiUrl);
-    $decodedData = json_decode($exchangeData, true);
-
-    return $decodedData['usd'];
-}
-
-
-$ip = getClientIP();
-if ($ip) {
-    $ip = "178.238.11.6";
-}
-// $ip = "125.22.51.250";
-$ip = "178.238.11.6";
-$country = getCountryFromIP($ip);
-$exchangeRates = getCurrencyExchangeRates();
-$priceInUSD = 10;
-$currencyCodes = [
-    'US' => 'usd',
-    'IN' => 'inr',
-    'GB' => 'gbp',
-    'CA' => 'cad'
-];
-$currencyCode = isset($currencyCodes[$country]) ? $currencyCodes[$country] : 'USD';
-$exchangeRate = isset($exchangeRates[$currencyCode]) ? $exchangeRates[$currencyCode] : 1;
-$priceInSelectedCurrency = $priceInUSD * $exchangeRate;
-// function roundUp($value, $step = 100)
-// {
-//     return ceil($value / $step) * $step;
-// }
-$roundedceilvalue = round($exchangeRate * 100);
+include_once("function.php");
 
 $params = [
     'type' => isset($_GET['type']) ? $_GET['type'] : '',
@@ -402,9 +348,9 @@ $conn->close();
                                 <div class="spa-product-card hover-img">
                                     <div class="spa-product-image">
                                         <a href="product-details.php">
-                                            <img src="assets/image/beauty-spa/spa-product-image.png" alt="">
+                                            <img src="<?php echo $product['product_image']; ?>" alt="">
                                         </a>
-                                        <div class="view-and-cart-area">
+                                        <!-- <div class="view-and-cart-area">
                                             <ul>
                                                 <li><span>Quick View</span>
                                                     <a class="view" data-bs-toggle="modal" data-bs-target="#product-view">
@@ -423,7 +369,7 @@ $conn->close();
                                                     </a>
                                                 </li>
                                             </ul>
-                                        </div>
+                                        </div> -->
                                     </div>
                                     <div class="spa-product-content text-center">
                                         <ul class="star">
@@ -433,7 +379,7 @@ $conn->close();
                                             <li><i class="bi bi-star-fill"></i></li>
                                             <li><i class="bi bi-star-fill"></i></li>
                                         </ul>
-                                        <h4><a href="product-details.php"><?php echo htmlspecialchars($product['product_name']); ?></a></h4>
+                                        <h4><a href="product-details.php?id=<?php echo $product["product_id"] ?>"><?php echo htmlspecialchars($product['product_name']); ?></a></h4>
                                         <span><?php echo round($product["price"] * $exchangeRate, 2) . " " . strtoupper($currencyCode) ?></span>
                                     </div>
                                 </div>

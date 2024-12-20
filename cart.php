@@ -1,5 +1,46 @@
 <?php
-include_once("header.php")
+include_once("header.php");
+include_once("config.php");
+include_once("function.php");
+if (isset($_SESSION['id'])) {
+    $user_id = $_SESSION['id'];
+
+    $query = "
+        SELECT 
+            c.id AS cart_id,
+            c.qty AS quantity,
+            p.product_id,
+            p.product_name AS product_name,
+            p.price AS product_price,
+            p.product_image AS product_image,
+            p.description AS product_description
+        FROM cart c
+        JOIN products p ON c.product_id = p.product_id
+        WHERE c.user_id = ? AND p.status = 'active'
+    ";
+
+    if ($stmt = $conn->prepare($query)) {
+        $stmt->bind_param("i", $user_id);
+
+        $stmt->execute();
+
+        $result = $stmt->get_result();
+
+        if ($result->num_rows > 0) {
+            $products = $result->fetch_all(MYSQLI_ASSOC);
+        } else {
+            $products = [];
+        }
+
+        $stmt->close();
+    } else {
+        echo "Error in preparing the query: " . $conn->error;
+    }
+    $totalPrice = 0;
+    foreach ($products as $product) {
+        $totalPrice = $product['product_price'] * $product['quantity'] + $totalPrice;
+    }
+}
 ?>
 
 <!-- breadcrumb section strats here -->
@@ -41,71 +82,47 @@ include_once("header.php")
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td data-label="Product Info">
-                                    <div class="product-info-wrapper">
-                                        <div class="product-info-img">
-                                            <img src="assets/image/beauty-spa/cart-page/cart-image.png" alt="">
-                                        </div>
-                                        <div class="product-info-content">
-                                            <h6>opi nail envy nail strengthener</h6>
-                                            <p><span>SKU: </span>D32-5H23</p>
-                                            <ul>
-                                                <li>remove</li>
-                                                <li>
-                                                    <div class="qty-btn">quantity</div>
-                                                    <div class="quantity-area">
-                                                        <div class="quantity">
-                                                            <a class="quantity__minus"><span><i
-                                                                        class="bi bi-dash"></i></span></a>
-                                                            <input name="quantity" type="text"
-                                                                class="quantity__input" value="01">
-                                                            <a class="quantity__plus"><span><i
-                                                                        class="bi bi-plus"></i></span></a>
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td data-label="Price"><span>$148.00</span></td>
-                                <td data-label="Total">$148.00</td>
-                            </tr>
-                            <tr>
-                                <td data-label="Product Info">
-                                    <div class="product-info-wrapper">
-                                        <div class="product-info-img">
-                                            <img src="assets/image/beauty-spa/cart-page/cart-image2.png" alt="">
-                                        </div>
-                                        <div class="product-info-content">
-                                            <h6>cerave hydrating facial cleanser.</h6>
-                                            <p><span>SKU: </span>D32-5H23</p>
-                                            <ul>
-                                                <li>remove</li>
-                                                <li>
-                                                    <div class="qty-btn">quantity</div>
-                                                    <div class="quantity-area">
-                                                        <div class="quantity">
-                                                            <a class="quantity__minus"><span><i
-                                                                        class="bi bi-dash"></i></span></a>
-                                                            <input name="quantity" type="text"
-                                                                class="quantity__input" value="01">
-                                                            <a class="quantity__plus"><span><i
-                                                                        class="bi bi-plus"></i></span></a>
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td data-label="Price"><span>$200.00</span></td>
-                                <td data-label="Total">$200.00</td>
-                            </tr>
+                            <?php if (!empty($products)):
+                                foreach ($products as $product): ?>
+                                    <tr>
+                                        <td data-label="Product Info">
+                                            <div class="product-info-wrapper">
+                                                <div class="product-info-img">
+                                                    <img src=<?php echo $product['product_image']; ?> alt="">
+                                                </div>
+                                                <div class="product-info-content">
+                                                    <h6><?php echo $product['product_name']; ?></h6>
+                                                    <p><span>SKU: </span>D32-5H23</p>
+                                                    <ul>
+                                                        <li onclick="">remove</li>
+                                                        <li>
+                                                            <div class="qty-btn">quantity</div>
+                                                            <div class="quantity-area">
+                                                                <div class="quantity">
+                                                                    <a class="quantity__minus"><span><i
+                                                                                class="bi bi-dash"></i></span></a>
+                                                                    <input name="quantity" type="text"
+                                                                        class="quantity__input" value="01">
+                                                                    <a class="quantity__plus"><span><i
+                                                                                class="bi bi-plus"></i></span></a>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td data-label="Price"><span><?php echo $product['product_price'] . " X " . $product['quantity'] ?></span></td>
+                                        <td data-label="Total"><?php echo $product['product_price'] * $product['quantity'] . " " . strtoupper($currencyCode); ?></td>
+                                    </tr>
+                                <?php endforeach; ?>
+                            <?php else: ?>
+                                <p>No products available at the moment.</p>
+                            <?php endif; ?>
+
                         </tbody>
                     </table>
-                    <a href="product.html" class="details-button">
+                    <a href="product-listing.php" class="details-button">
                         Continue Shoping
                         <svg width="10" height="10" viewBox="0 0 10 10" xmlns="http://www.w3.org/2000/svg">
                             <path
@@ -123,16 +140,16 @@ include_once("header.php")
                         <ul class="order-summary-list style-2">
                             <li>
                                 <strong>Sub Total</strong>
-                                <strong>$348.00</strong>
+                                <strong><?php echo $totalPrice . " " . strtoupper($currencyCode); ?></strong>
                             </li>
                             <li>
                                 Shipping
                                 <div class="order-info">
                                     <p>Shipping Free*</p>
-                                    <span> Pickup fee $10.00</span>
+                                    <span>GST 18%</span>
                                 </div>
                             </li>
-                            <li>
+                            <!-- <li>
                                 <div class="coupon-area">
                                     <span>Coupon Code</span>
                                     <form>
@@ -142,10 +159,10 @@ include_once("header.php")
                                         </div>
                                     </form>
                                 </div>
-                            </li>
+                            </li> -->
                             <li>
                                 <strong>Total</strong>
-                                <strong>$214.00</strong>
+                                <strong><?php echo round($totalPrice * 0.18 + $totalPrice, 2) . " " . strtoupper($currencyCode); ?></strong>
                             </li>
                         </ul>
                         <a href="checkout.php" class="primary-btn1 mt-40">
@@ -167,44 +184,3 @@ include_once("header.php")
 include_once("footer.php")
 ?>
 <!-- footer section ends here -->
-
-
-<!-- jquery js link -->
-<script data-cfasync="false" src="https://demo.egenslab.com/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
-<script src="assets/js/jquery-3.7.1.min.js"></script>
-<script src="assets/js/jquery-ui.js"></script>
-<!-- counterup js -->
-<script src="assets/js/waypoints.js"></script>
-<script src="assets/js/jquery.counterup.js"></script>
-<script src="assets/js/jquery.counterup.min.js"></script>
-<!-- marquee js -->
-<script src="assets/js/jquery.marquee.min.js"></script>
-<!-- poper js -->
-<script src="assets/js/popper.min.js"></script>
-<!-- swiper js -->
-<script src="assets/js/swiper-bundle.min.js"></script>
-<!-- fancybox js -->
-<script src="assets/js/jquery.fancybox.min.js"></script>
-<script src="assets/js/jquery.nice-select.min.js"></script>
-<!-- wow js -->
-<script src="assets/js/wow.min.js"></script>
-<!-- bootstrap js -->
-<script src="assets/js/bootstrap.min.js"></script>
-<!-- main js -->
-<script src="assets/js/main.js"></script>
-<script>
-    $(".marquee_text2").marquee({
-        direction: "left",
-        duration: 25000,
-        gap: 50,
-        delayBeforeStart: 0,
-        duplicated: true,
-        startVisible: true,
-    });
-</script>
-</body>
-
-
-<!-- Mirrored from demo.egenslab.com/html/buret/preview/skin-care/cart.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 01 Dec 2024 12:36:56 GMT -->
-
-</html>

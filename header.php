@@ -1,9 +1,21 @@
 <?php
 session_start();
-if (isset($_SESSION["id"])) {
-    $link = 'onclick="window.location.href=\'auth/account/account.php\'"';
+if (isset($_SESSION["email"])) {
+    $link = "auth/account/account.php";
 } else {
     $link = 'data-bs-target="#popup-auth-product-view"';
+}
+if (isset($_SESSION["id"])) {
+    $id = $_SESSION["id"];
+    $query = "SELECT COUNT(*) as cart_count FROM cart WHERE user_id = ?";
+
+    if ($stmt = $conn->prepare($query)) {
+        $stmt->bind_param("s", $id);
+        $stmt->execute();
+        $stmt->bind_result($cart_count);
+        $stmt->fetch();
+        $stmt->close();
+    }
 }
 ?>
 
@@ -213,7 +225,7 @@ if (isset($_SESSION["id"])) {
                                     stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"
                                     stroke-linejoin="round" />
                             </svg>
-                            <span>0</span>
+                            <span><?php echo $cart_count; ?></span>
                         </div>
                     </li>
                 </ul>
