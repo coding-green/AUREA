@@ -28,6 +28,7 @@ function validateUser($inputEmail, $inputPassword, $pdo) {
 
         if ($user && password_verify($inputPassword, $user['user_password'])) {
             $_SESSION['email'] = $user['user_email'];
+            $_SESSION['id'] = $user['user_id'];
             return true; // Valid credentials
         }
     } catch (Exception $e) {
