@@ -16,6 +16,7 @@
             background-color: #121212;
             color: #ffffff;
             line-height: 1.6;
+            height: 100vh;
         }
 
         .container {
@@ -26,6 +27,7 @@
             padding: 50px;
             max-width: 1200px;
             margin: 0 auto;
+            height: 100%;
         }
 
         .image-section {
@@ -89,7 +91,7 @@
     <div class="container">
         <!-- Image Section -->
         <div class="image-section">
-            <img src="https://via.placeholder.com/500x300" alt="Placeholder Image">
+            <img src="./assets/image/skin-care/why choose us image.jpg" alt="Placeholder Image">
         </div>
 
         <!-- Content Section -->
