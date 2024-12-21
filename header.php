@@ -2,7 +2,7 @@
 session_start();
 include_once("config.php");
 if (isset($_SESSION["email"])) {
-    $link = "auth/account/account.php";
+    $link = "onclick = \"window.location.href='auth/account/account.php'\"";
 } else {
     $link = 'data-bs-target="#popup-auth-product-view"';
 }
@@ -47,7 +47,7 @@ if (isset($_SESSION["id"])) {
 <body>
     <!-- login popup modal start here -->
 
-    <div class="modal product-view-modal" id ="popup-auth-product-view">
+    <div class="modal product-view-modal" id="popup-auth-product-view">
         <div class="modal-dialog modal-md modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-body">
@@ -80,6 +80,7 @@ if (isset($_SESSION["id"])) {
                                         document.getElementById("popup-auth-signupFormContainer").classList.remove("popup-auth-active");
                                         document.getElementById("popup-auth-loginFormContainer").classList.add("popup-auth-active");
                                     }
+
                                     function signupPopup() {
                                         document.getElementById("popup-auth-loginFormContainer").classList.remove("popup-auth-active");
                                         document.getElementById("popup-auth-signupFormContainer").classList.add("popup-auth-active");
