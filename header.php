@@ -175,7 +175,11 @@ if (isset($_SESSION["id"])) {
                                     stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"
                                     stroke-linejoin="round" />
                             </svg>
-                            <span><?php echo $cart_count; ?></span>
+                            <span><?php if (isset($_SESSION['id'])) {
+                                        echo $cart_count;
+                                    } else {
+                                        echo 0;
+                                    } ?></span>
                         </div>
                     </li>
                 </ul>

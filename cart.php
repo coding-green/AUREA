@@ -88,23 +88,23 @@ if (isset($_SESSION['id'])) {
                                         <td data-label="Product Info">
                                             <div class="product-info-wrapper">
                                                 <div class="product-info-img">
-                                                    <img src=<?php echo $product['product_image']; ?> alt="">
+                                                    <img src="<?php echo $product['product_image']; ?>" alt="">
                                                 </div>
                                                 <div class="product-info-content">
                                                     <h6><?php echo $product['product_name']; ?></h6>
                                                     <p><span>SKU: </span>D32-5H23</p>
                                                     <ul>
-                                                        <li onclick="">remove</li>
+                                                        <li>
+                                                            <!-- Use data-product-id attribute for the product ID -->
+                                                            <span class="remove-item" data-product-id="<?php echo $product['product_id']; ?>">Remove</span>
+                                                        </li>
                                                         <li>
                                                             <div class="qty-btn">quantity</div>
                                                             <div class="quantity-area">
                                                                 <div class="quantity">
-                                                                    <a class="quantity__minus"><span><i
-                                                                                class="bi bi-dash"></i></span></a>
-                                                                    <input name="quantity" type="text"
-                                                                        class="quantity__input" value="01">
-                                                                    <a class="quantity__plus"><span><i
-                                                                                class="bi bi-plus"></i></span></a>
+                                                                    <a class="quantity__minus"><span><i class="bi bi-dash"></i></span></a>
+                                                                    <input name="quantity" type="text" class="quantity__input" value="01">
+                                                                    <a class="quantity__plus"><span><i class="bi bi-plus"></i></span></a>
                                                                 </div>
                                                             </div>
                                                         </li>
@@ -119,6 +119,34 @@ if (isset($_SESSION['id'])) {
                             <?php else: ?>
                                 <p>No products available at the moment.</p>
                             <?php endif; ?>
+
+                            <script>
+                                document.addEventListener('click', event => {
+                                    if (event.target.classList.contains('remove-item')) {
+                                        const productId = event.target.dataset.productId;
+                                        fetch('actionDelete.php', {
+                                                method: 'POST',
+                                                headers: {
+                                                    'Content-Type': 'application/json'
+                                                },
+                                                body: JSON.stringify({
+                                                    product_id: productId
+                                                })
+                                            })
+                                            .then(response => response.json())
+                                            .then(data => {
+                                                if (data.success) {
+                                                    alert('Item removed successfully');
+                                                    event.target.closest('tr').remove(); // Remove the row containing the item
+                                                } else {
+                                                    alert(data.message || 'Error removing item');
+                                                }
+                                            })
+                                            .catch(() => alert('An error occurred while removing the item'));
+                                    }
+                                });
+                            </script>
+
 
                         </tbody>
                     </table>

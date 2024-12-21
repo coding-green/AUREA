@@ -1,5 +1,6 @@
 <?php
 include 'header.php';
+include_once('function.php');
 ?>
 <!-- Banner section strats here -->
 <div class="skin-care-banner-section">
@@ -94,43 +95,56 @@ include 'header.php';
 <!-- Banner section ends here -->
 <div class="my-5 shop-by-concern">
     <h1>Shop by Skin Concern</h1>
-    <div class="card-container">
-        <!-- Card 1 -->
-        <div class="card" onclick="window.location.href='product-listing.php?skin_concern=antiaging'">
-            <img src="https://glo7.com/cdn/shop/files/home1.png?v=1688977868&width=200" class="card-img-top" alt="Brand 1">
-            <h5 class="card-title">Anti-Aging</h5>
-        </div>
-
-        <!-- Card 2 -->
-        <div class="card" onclick="window.location.href='product-listing.php?skin_concern=acne'">
-            <img src="https://glo7.com/cdn/shop/files/home8.png?v=1688978603&width=200" class="card-img-top" alt="Brand 2">
-            <h5 class="card-title">Acne</h5>
-        </div>
-
-        <!-- Card 3 -->
-        <div class="card" onclick="window.location.href='product-listing.php?skin_concern=darkspots'">
-            <img src="https://glo7.com/cdn/shop/files/home3.png?v=1688977890&width=200" class="card-img-top" alt="Brand 3">
-            <h5 class="card-title">Dark Spots</h5>
-        </div>
-
-        <!-- Card 4 -->
-        <div class="card" onclick="window.location.href='product-listing.php?skin_concern=dryness'">
-            <img src="https://glo7.com/cdn/shop/files/home4.png?v=1688977890&width=200" class="card-img-top" alt="Brand 4">
-            <h5 class="card-title">Dryness</h5>
-        </div>
-
-        <!-- Card 5 -->
-        <div class="card" onclick="window.location.href='product-listing.php?skin_concern=wrinkles'">
-            <img src="https://glo7.com/cdn/shop/files/home6.png?v=1688978460&width=200" class="card-img-top" alt="Brand 5">
-            <h5 class="card-title">Wrinkles</h5>
-        </div>
-
-        <!-- Card 6 -->
-        <div class="card" onclick="window.location.href='product-listing.php?skin_concern=blackheads'">
-            <img src="https://glo7.com/cdn/shop/files/home7.png?v=1688978461&width=200" class="card-img-top" alt="Brand 6">
-            <h5 class="card-title">Blackheads</h5>
+    <div class="container">
+        <div class="d-flex flex-wrap justify-content-center align-items-center gap-3">
+            <div class="card" onclick="window.location.href='product-listing.php?skin_concern=acne'">
+                <img src="assets/image/skin-care/skinconcern/acne.jpg" class="card-img-top" alt="Brand 2">
+                <h5 class="card-title">Acne</h5>
+            </div>
+            <div class="card" onclick="window.location.href='product-listing.php?skin_concern=antiaging'">
+                <img src="assets/image/skin-care/skinconcern/anti aging.jpg" class="card-img-top" alt="Brand 1">
+                <h5 class="card-title">Anti-Aging</h5>
+            </div>
+            <div class="card" onclick="window.location.href='product-listing.php?skin_concern=blackheads'">
+                <img src="assets/image/skin-care/skinconcern/blackheads.jpg" class="card-img-top" alt="Brand 6">
+                <h5 class="card-title">Blackheads</h5>
+            </div>
+            <div class="card" onclick="window.location.href='product-listing.php?skin_concern=darkspots'">
+                <img src="assets/image/skin-care/skinconcern/dark spot and pigmentation.jpg" class="card-img-top" alt="Brand 3">
+                <h5 class="card-title">Dark Spots & Pigmentation</h5>
+            </div>
+            <div class="card" onclick="window.location.href='product-listing.php?skin_concern=dryness'">
+                <img src="assets/image/skin-care/skinconcern/dryness_ dehydration.jpg" class="card-img-top" alt="Brand 4">
+                <h5 class="card-title">Dryness Dehydration</h5>
+            </div>
+            <div class="card" onclick="window.location.href='product-listing.php?skin_concern=dullness'">
+                <img src="assets/image/skin-care/skinconcern/dullness.jpg" class="card-img-top" alt="Brand 5">
+                <h5 class="card-title">Dullness</h5>
+            </div>
+            <div class="card" onclick="window.location.href='product-listing.php?skin_concern=enlargedpores'">
+                <img src="assets/image/skin-care/skinconcern/enlarged poers.jpg" class="card-img-top" alt="Brand 5">
+                <h5 class="card-title">Enlarged Pores</h5>
+            </div>
+            <div class="card" onclick="window.location.href='product-listing.php?skin_concern=keratosispilaris'">
+                <img src="assets/image/skin-care/skinconcern/Keratosis pilaris.jpg" class="card-img-top" alt="Brand 5">
+                <h5 class="card-title">Keratosis Pilaris</h5>
+            </div>
+            <div class="card" onclick="window.location.href='product-listing.php?skin_concern=rednessrosacea'">
+                <img src="assets/image/skin-care/skinconcern/Redness or rosacea.jpg" class="card-img-top" alt="Brand 5">
+                <h5 class="card-title">Redness or Rosacea</h5>
+            </div>
+            <div class="card" onclick="window.location.href='product-listing.php?skin_concern=texturedskin'">
+                <img src="assets/image/skin-care/skinconcern/textured skin.jpg" class="card-img-top" alt="Brand 5">
+                <h5 class="card-title">Textured Skin</h5>
+            </div>
+            <div class="card" onclick="window.location.href='product-listing.php?skin_concern=unevenskintone'">
+                <img src="assets/image/skin-care/skinconcern/uneven skin tone.jpg" class="card-img-top" alt="Brand 5">
+                <h5 class="card-title">Uneven Skin Tone</h5>
+            </div>
         </div>
     </div>
+
+
 </div>
 <!-- product section strats here -->
 <div class="skin-care-product-section mb-120 pt-120">
@@ -165,194 +179,41 @@ include 'header.php';
             <div class="col-lg-12">
                 <div class="swiper skin-care-product-swiper">
                     <div class="swiper-wrapper">
-                        <div class="swiper-slide">
-                            <div class="product-card-section">
-                                <div class="product-image">
-                                    <img src="assets/image/skin-care/product-image.png" alt="">
-                                    <div class="add-cart-btn">
-                                        <a href="product-details.php" class="primary-btn6 cart-btn"><svg width="16" height="16"
-                                                viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
-                                                <path
-                                                    d="M11.9007 15H4.10071C2.45071 15 1.10071 13.65 1.10071 12V11.9L1.40071 3.9C1.45071 2.25 2.80071 1 4.40071 1H11.6007C13.2007 1 14.5507 2.25 14.6007 3.9L14.9007 11.9C14.9507 12.7 14.6507 13.45 14.1007 14.05C13.5507 14.65 12.8007 15 12.0007 15H11.9007ZM4.40071 2C3.30071 2 2.45071 2.85 2.40071 3.9L2.10071 12C2.10071 13.1 3.00071 14 4.10071 14H12.0007C12.5507 14 13.0507 13.75 13.4007 13.35C13.7507 12.95 13.9507 12.45 13.9507 11.9L13.6507 3.9C13.6007 2.8 12.7507 2 11.6507 2H4.40071Z" />
-                                                <path
-                                                    d="M8 7C6.05 7 4.5 5.45 4.5 3.5C4.5 3.2 4.7 3 5 3C5.3 3 5.5 3.2 5.5 3.5C5.5 4.9 6.6 6 8 6C9.4 6 10.5 4.9 10.5 3.5C10.5 3.2 10.7 3 11 3C11.3 3 11.5 3.2 11.5 3.5C11.5 5.45 9.95 7 8 7Z" />
-                                            </svg>
-                                            ADD TO CART
-                                        </a>
+
+                        <?php
+                        include_once('config.php');
+
+                        $sql = "SELECT * FROM products WHERE status = 'active' ORDER BY id DESC LIMIT 8";
+                        $stmt = $conn->prepare($sql);
+                        $stmt->execute();
+
+                        $result = $stmt->get_result();
+                        while ($row = $result->fetch_assoc()) {
+                        ?>
+                            <div class="swiper-slide">
+                                <div class="product-card-section">
+                                    <div class="product-image">
+                                        <img src="<?php echo $row['product_image'] ?>" alt="">
+                                        <div class="add-cart-btn">
+                                            <a href="addtocart.php?id=<?php echo $row["product_id"]; ?>" class=" primary-btn6 cart-btn"><svg width="16" height="16"
+                                                    viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M11.9007 15H4.10071C2.45071 15 1.10071 13.65 1.10071 12V11.9L1.40071 3.9C1.45071 2.25 2.80071 1 4.40071 1H11.6007C13.2007 1 14.5507 2.25 14.6007 3.9L14.9007 11.9C14.9507 12.7 14.6507 13.45 14.1007 14.05C13.5507 14.65 12.8007 15 12.0007 15H11.9007ZM4.40071 2C3.30071 2 2.45071 2.85 2.40071 3.9L2.10071 12C2.10071 13.1 3.00071 14 4.10071 14H12.0007C12.5507 14 13.0507 13.75 13.4007 13.35C13.7507 12.95 13.9507 12.45 13.9507 11.9L13.6507 3.9C13.6007 2.8 12.7507 2 11.6507 2H4.40071Z" />
+                                                    <path
+                                                        d="M8 7C6.05 7 4.5 5.45 4.5 3.5C4.5 3.2 4.7 3 5 3C5.3 3 5.5 3.2 5.5 3.5C5.5 4.9 6.6 6 8 6C9.4 6 10.5 4.9 10.5 3.5C10.5 3.2 10.7 3 11 3C11.3 3 11.5 3.2 11.5 3.5C11.5 5.45 9.95 7 8 7Z" />
+                                                </svg>
+                                                ADD TO CART
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="product-content text-center">
+                                        <h4><?php echo $row["product_name"]; ?></h4>
+                                        <h6><?php echo round($row["price"] * $exchangeRate, 2) . " " . strtoupper($currencyCode) ?></h6>
                                     </div>
                                 </div>
-                                <div class="product-content text-center">
-                                    <h4>Curl Enhancing Cream</h4>
-                                    <p>Adherence to strict hygiene and safety.</p>
-                                    <h6>$168.0</h6>
-                                </div>
                             </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="product-card-section">
-                                <div class="product-image">
-                                    <img src="assets/image/skin-care/product-image2.png" alt="">
-                                    <div class="add-cart-btn">
-                                        <a href="#" class="primary-btn6 cart-btn"><svg width="16" height="16"
-                                                viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
-                                                <path
-                                                    d="M11.9007 15H4.10071C2.45071 15 1.10071 13.65 1.10071 12V11.9L1.40071 3.9C1.45071 2.25 2.80071 1 4.40071 1H11.6007C13.2007 1 14.5507 2.25 14.6007 3.9L14.9007 11.9C14.9507 12.7 14.6507 13.45 14.1007 14.05C13.5507 14.65 12.8007 15 12.0007 15H11.9007ZM4.40071 2C3.30071 2 2.45071 2.85 2.40071 3.9L2.10071 12C2.10071 13.1 3.00071 14 4.10071 14H12.0007C12.5507 14 13.0507 13.75 13.4007 13.35C13.7507 12.95 13.9507 12.45 13.9507 11.9L13.6507 3.9C13.6007 2.8 12.7507 2 11.6507 2H4.40071Z" />
-                                                <path
-                                                    d="M8 7C6.05 7 4.5 5.45 4.5 3.5C4.5 3.2 4.7 3 5 3C5.3 3 5.5 3.2 5.5 3.5C5.5 4.9 6.6 6 8 6C9.4 6 10.5 4.9 10.5 3.5C10.5 3.2 10.7 3 11 3C11.3 3 11.5 3.2 11.5 3.5C11.5 5.45 9.95 7 8 7Z" />
-                                            </svg>
-                                            ADD TO CART
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="product-content text-center">
-                                    <h4>Frizz Control Gel</h4>
-                                    <p>Traditional perm for bouncy curls.</p>
-                                    <h6>$345.0</h6>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="product-card-section">
-                                <div class="product-image">
-                                    <img src="assets/image/skin-care/product-image3.png" alt="">
-                                    <div class="add-cart-btn">
-                                        <a href="#" class="primary-btn6 cart-btn"><svg width="16" height="16"
-                                                viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
-                                                <path
-                                                    d="M11.9007 15H4.10071C2.45071 15 1.10071 13.65 1.10071 12V11.9L1.40071 3.9C1.45071 2.25 2.80071 1 4.40071 1H11.6007C13.2007 1 14.5507 2.25 14.6007 3.9L14.9007 11.9C14.9507 12.7 14.6507 13.45 14.1007 14.05C13.5507 14.65 12.8007 15 12.0007 15H11.9007ZM4.40071 2C3.30071 2 2.45071 2.85 2.40071 3.9L2.10071 12C2.10071 13.1 3.00071 14 4.10071 14H12.0007C12.5507 14 13.0507 13.75 13.4007 13.35C13.7507 12.95 13.9507 12.45 13.9507 11.9L13.6507 3.9C13.6007 2.8 12.7507 2 11.6507 2H4.40071Z" />
-                                                <path
-                                                    d="M8 7C6.05 7 4.5 5.45 4.5 3.5C4.5 3.2 4.7 3 5 3C5.3 3 5.5 3.2 5.5 3.5C5.5 4.9 6.6 6 8 6C9.4 6 10.5 4.9 10.5 3.5C10.5 3.2 10.7 3 11 3C11.3 3 11.5 3.2 11.5 3.5C11.5 5.45 9.95 7 8 7Z" />
-                                            </svg>
-                                            ADD TO CART
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="product-content text-center">
-                                    <h4>Shine Serum</h4>
-                                    <p>A shine serum is a lightweight oil.</p>
-                                    <h6>$300.0
-                                        <del>$345.0</del>
-                                    </h6>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="product-card-section">
-                                <div class="product-image">
-                                    <img src="assets/image/skin-care/product-image4.png" alt="">
-                                    <div class="add-cart-btn">
-                                        <a href="#" class="primary-btn6 cart-btn"><svg width="16" height="16"
-                                                viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
-                                                <path
-                                                    d="M11.9007 15H4.10071C2.45071 15 1.10071 13.65 1.10071 12V11.9L1.40071 3.9C1.45071 2.25 2.80071 1 4.40071 1H11.6007C13.2007 1 14.5507 2.25 14.6007 3.9L14.9007 11.9C14.9507 12.7 14.6507 13.45 14.1007 14.05C13.5507 14.65 12.8007 15 12.0007 15H11.9007ZM4.40071 2C3.30071 2 2.45071 2.85 2.40071 3.9L2.10071 12C2.10071 13.1 3.00071 14 4.10071 14H12.0007C12.5507 14 13.0507 13.75 13.4007 13.35C13.7507 12.95 13.9507 12.45 13.9507 11.9L13.6507 3.9C13.6007 2.8 12.7507 2 11.6507 2H4.40071Z" />
-                                                <path
-                                                    d="M8 7C6.05 7 4.5 5.45 4.5 3.5C4.5 3.2 4.7 3 5 3C5.3 3 5.5 3.2 5.5 3.5C5.5 4.9 6.6 6 8 6C9.4 6 10.5 4.9 10.5 3.5C10.5 3.2 10.7 3 11 3C11.3 3 11.5 3.2 11.5 3.5C11.5 5.45 9.95 7 8 7Z" />
-                                            </svg>
-                                            ADD TO CART
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="product-content text-center">
-                                    <h4>Shine Serum</h4>
-                                    <p>A shine serum is a lightweight oil.</p>
-                                    <h6>$234.0</h6>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="product-card-section">
-                                <div class="product-image">
-                                    <img src="assets/image/skin-care/product-image.png" alt="">
-                                    <div class="add-cart-btn">
-                                        <a href="#" class="primary-btn6 cart-btn"><svg width="16" height="16"
-                                                viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
-                                                <path
-                                                    d="M11.9007 15H4.10071C2.45071 15 1.10071 13.65 1.10071 12V11.9L1.40071 3.9C1.45071 2.25 2.80071 1 4.40071 1H11.6007C13.2007 1 14.5507 2.25 14.6007 3.9L14.9007 11.9C14.9507 12.7 14.6507 13.45 14.1007 14.05C13.5507 14.65 12.8007 15 12.0007 15H11.9007ZM4.40071 2C3.30071 2 2.45071 2.85 2.40071 3.9L2.10071 12C2.10071 13.1 3.00071 14 4.10071 14H12.0007C12.5507 14 13.0507 13.75 13.4007 13.35C13.7507 12.95 13.9507 12.45 13.9507 11.9L13.6507 3.9C13.6007 2.8 12.7507 2 11.6507 2H4.40071Z" />
-                                                <path
-                                                    d="M8 7C6.05 7 4.5 5.45 4.5 3.5C4.5 3.2 4.7 3 5 3C5.3 3 5.5 3.2 5.5 3.5C5.5 4.9 6.6 6 8 6C9.4 6 10.5 4.9 10.5 3.5C10.5 3.2 10.7 3 11 3C11.3 3 11.5 3.2 11.5 3.5C11.5 5.45 9.95 7 8 7Z" />
-                                            </svg>
-                                            ADD TO CART
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="product-content text-center">
-                                    <h4>Curl Enhancing Cream</h4>
-                                    <p>Adherence to strict hygiene and safety.</p>
-                                    <h6>$168.0</h6>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="product-card-section">
-                                <div class="product-image">
-                                    <img src="assets/image/skin-care/product-image2.png" alt="">
-                                    <div class="add-cart-btn">
-                                        <a href="#" class="primary-btn6 cart-btn"><svg width="16" height="16"
-                                                viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
-                                                <path
-                                                    d="M11.9007 15H4.10071C2.45071 15 1.10071 13.65 1.10071 12V11.9L1.40071 3.9C1.45071 2.25 2.80071 1 4.40071 1H11.6007C13.2007 1 14.5507 2.25 14.6007 3.9L14.9007 11.9C14.9507 12.7 14.6507 13.45 14.1007 14.05C13.5507 14.65 12.8007 15 12.0007 15H11.9007ZM4.40071 2C3.30071 2 2.45071 2.85 2.40071 3.9L2.10071 12C2.10071 13.1 3.00071 14 4.10071 14H12.0007C12.5507 14 13.0507 13.75 13.4007 13.35C13.7507 12.95 13.9507 12.45 13.9507 11.9L13.6507 3.9C13.6007 2.8 12.7507 2 11.6507 2H4.40071Z" />
-                                                <path
-                                                    d="M8 7C6.05 7 4.5 5.45 4.5 3.5C4.5 3.2 4.7 3 5 3C5.3 3 5.5 3.2 5.5 3.5C5.5 4.9 6.6 6 8 6C9.4 6 10.5 4.9 10.5 3.5C10.5 3.2 10.7 3 11 3C11.3 3 11.5 3.2 11.5 3.5C11.5 5.45 9.95 7 8 7Z" />
-                                            </svg>
-                                            ADD TO CART
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="product-content text-center">
-                                    <h4>Frizz Control Gel</h4>
-                                    <p>Traditional perm for bouncy curls.</p>
-                                    <h6>$345.0</h6>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="product-card-section">
-                                <div class="product-image">
-                                    <img src="assets/image/skin-care/product-image3.png" alt="">
-                                    <div class="add-cart-btn">
-                                        <a href="#" class="primary-btn6 cart-btn"><svg width="16" height="16"
-                                                viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
-                                                <path
-                                                    d="M11.9007 15H4.10071C2.45071 15 1.10071 13.65 1.10071 12V11.9L1.40071 3.9C1.45071 2.25 2.80071 1 4.40071 1H11.6007C13.2007 1 14.5507 2.25 14.6007 3.9L14.9007 11.9C14.9507 12.7 14.6507 13.45 14.1007 14.05C13.5507 14.65 12.8007 15 12.0007 15H11.9007ZM4.40071 2C3.30071 2 2.45071 2.85 2.40071 3.9L2.10071 12C2.10071 13.1 3.00071 14 4.10071 14H12.0007C12.5507 14 13.0507 13.75 13.4007 13.35C13.7507 12.95 13.9507 12.45 13.9507 11.9L13.6507 3.9C13.6007 2.8 12.7507 2 11.6507 2H4.40071Z" />
-                                                <path
-                                                    d="M8 7C6.05 7 4.5 5.45 4.5 3.5C4.5 3.2 4.7 3 5 3C5.3 3 5.5 3.2 5.5 3.5C5.5 4.9 6.6 6 8 6C9.4 6 10.5 4.9 10.5 3.5C10.5 3.2 10.7 3 11 3C11.3 3 11.5 3.2 11.5 3.5C11.5 5.45 9.95 7 8 7Z" />
-                                            </svg>
-                                            ADD TO CART
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="product-content text-center">
-                                    <h4>Shine Serum</h4>
-                                    <p>A shine serum is a lightweight oil.</p>
-                                    <h6>$300.0
-                                        <del>$345.0</del>
-                                    </h6>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="product-card-section">
-                                <div class="product-image">
-                                    <img src="assets/image/skin-care/product-image4.png" alt="">
-                                    <div class="add-cart-btn">
-                                        <a href="#" class="primary-btn6 cart-btn"><svg width="16" height="16"
-                                                viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
-                                                <path
-                                                    d="M11.9007 15H4.10071C2.45071 15 1.10071 13.65 1.10071 12V11.9L1.40071 3.9C1.45071 2.25 2.80071 1 4.40071 1H11.6007C13.2007 1 14.5507 2.25 14.6007 3.9L14.9007 11.9C14.9507 12.7 14.6507 13.45 14.1007 14.05C13.5507 14.65 12.8007 15 12.0007 15H11.9007ZM4.40071 2C3.30071 2 2.45071 2.85 2.40071 3.9L2.10071 12C2.10071 13.1 3.00071 14 4.10071 14H12.0007C12.5507 14 13.0507 13.75 13.4007 13.35C13.7507 12.95 13.9507 12.45 13.9507 11.9L13.6507 3.9C13.6007 2.8 12.7507 2 11.6507 2H4.40071Z" />
-                                                <path
-                                                    d="M8 7C6.05 7 4.5 5.45 4.5 3.5C4.5 3.2 4.7 3 5 3C5.3 3 5.5 3.2 5.5 3.5C5.5 4.9 6.6 6 8 6C9.4 6 10.5 4.9 10.5 3.5C10.5 3.2 10.7 3 11 3C11.3 3 11.5 3.2 11.5 3.5C11.5 5.45 9.95 7 8 7Z" />
-                                            </svg>
-                                            ADD TO CART
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="product-content text-center">
-                                    <h4>Shine Serum</h4>
-                                    <p>A shine serum is a lightweight oil.</p>
-                                    <h6>$234.0</h6>
-                                </div>
-                            </div>
-                        </div>
+                        <?php } ?>
+
                     </div>
                 </div>
                 <div class="progress-pagination"></div>

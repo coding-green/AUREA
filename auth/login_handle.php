@@ -10,7 +10,8 @@ if (isset($_SESSION['email'])) {
 }
 
 // Function to validate username and password
-function validateUser($inputEmail, $inputPassword, $pdo) {
+function validateUser($inputEmail, $inputPassword, $pdo)
+{
     try {
         if (empty($inputEmail) || empty($inputPassword)) {
             return false; // Early return if inputs are empty
@@ -18,7 +19,7 @@ function validateUser($inputEmail, $inputPassword, $pdo) {
 
         $query = "SELECT * FROM users WHERE user_email = :user_email";
         $stmt = $pdo->prepare($query);
-        
+
         // Bind parameter safely
         $stmt->bindValue(':user_email', $inputEmail, PDO::PARAM_STR);
         $stmt->execute();
@@ -28,6 +29,7 @@ function validateUser($inputEmail, $inputPassword, $pdo) {
 
         if ($user && password_verify($inputPassword, $user['user_password'])) {
             $_SESSION['email'] = $user['user_email'];
+            $_SESSION['id'] = $user['user_id'];
             return true; // Valid credentials
         }
     } catch (Exception $e) {
@@ -51,4 +53,3 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         header('Location: ../login.php');
     }
 }
-?>
