@@ -8,11 +8,18 @@
         body {
             font-family: Arial, sans-serif;
             margin: 0;
-            padding: 20px;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+
             background-color: #f9f9f9;
         }
         form {
-            max-width: 600px;
+            min-width: 550px;
+            min-height: fit-content;
+            max-height: 500px;
             margin: auto;
             background: #fff;
             padding: 20px;
