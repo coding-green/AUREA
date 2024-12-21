@@ -1102,7 +1102,9 @@ const rangeInputvalue = document.querySelectorAll(".range-input input");
 
 let priceGap = 10;
 
-const priceInputvalue = document.querySelectorAll(".price-input input");
+const priceInputvalue = document.querySelectorAll(
+  ".price-input .price-field input"
+);
 
 for (let i = 0; i < priceInputvalue.length; i++) {
   priceInputvalue[i].addEventListener("input", (e) => {

@@ -168,7 +168,9 @@ if (isset($_SESSION['id'])) {
                         <ul class="order-summary-list style-2">
                             <li>
                                 <strong>Sub Total</strong>
-                                <strong><?php echo $totalPrice . " " . strtoupper($currencyCode); ?></strong>
+                                <strong><?php echo isset($totalPrice)
+                                            ? round($totalPrice, 2) . " " . strtoupper($currencyCode)
+                                            : "0.00 " . strtoupper($currencyCode); ?></strong>
                             </li>
                             <li>
                                 Shipping
@@ -190,7 +192,13 @@ if (isset($_SESSION['id'])) {
                             </li> -->
                             <li>
                                 <strong>Total</strong>
-                                <strong><?php echo round($totalPrice * 0.18 + $totalPrice, 2) . " " . strtoupper($currencyCode); ?></strong>
+                                <strong>
+                                    <?php
+                                    echo isset($totalPrice)
+                                        ? round($totalPrice * 0.18 + $totalPrice, 2) . " " . strtoupper($currencyCode)
+                                        : "0.00 " . strtoupper($currencyCode);
+                                    ?>
+                                </strong>
                             </li>
                         </ul>
                         <a href="checkout.php" class="primary-btn1 mt-40">

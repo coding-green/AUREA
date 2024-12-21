@@ -29,8 +29,8 @@ $ip = getClientIP();
 if ($ip) {
     $ip = "178.238.11.6";
 }
-$ip = "125.22.51.250";
-// $ip = "178.238.11.6";
+// $ip = "125.22.51.250";
+$ip = "178.238.11.6";
 
 $country = getCountryFromIP($ip);
 $currencyCodes = [
@@ -43,3 +43,4 @@ $currencyCode = isset($currencyCodes[$country]) ? $currencyCodes[$country] : 'US
 $exchangeRates = getCurrencyExchangeRates();
 $exchangeRate = isset($exchangeRates[$currencyCode]) ? $exchangeRates[$currencyCode] : 1;
 $priceInUSD = 10;
+$roundedceilvalue = round($exchangeRate * 100);
