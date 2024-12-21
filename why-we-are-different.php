@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -87,7 +88,26 @@
         }
     </style>
 </head>
+
 <body>
+    <!-- <?php // include 'header.php' 
+            ?>
+    <div style="background-color:#020101;backdrop-filter: blur(30px);height:135px"></div>
+    <div class="skin-care-breadcrumb-section">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12 d-flex justify-content-center">
+                    <div class="banner-content text-center">
+                        <h1>WHY WE ARE DIFFERENT</h1>
+                        <ul class="breadcrumb-list">
+                            <li><a href="index.php">Home</a></li>
+                            <li>WHY WE ARE DIFFERENT</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> -->
     <div class="container">
         <!-- Image Section -->
         <div class="image-section">
@@ -107,5 +127,8 @@
             </ul>
         </div>
     </div>
+    <?php // include 'footer.php' 
+    ?>
 </body>
+
 </html>
