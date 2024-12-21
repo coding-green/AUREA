@@ -40,5 +40,5 @@ if (isset($_GET['id'], $_GET['qty']) && isset($_SESSION['id'])) {
     }
     echo "<script>window.location.href='cart.php'</script>";
 } else {
-    echo "<script>window.location.href='index.php'</script>";
+    echo "<script>window.location.href='cart.php'</script>";
 }
