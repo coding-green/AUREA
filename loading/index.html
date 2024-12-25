@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <img id="img1" src="logo-loading.png" alt="Image 1" />
+      <img id="img2" src="1.svg" alt="Image 2" class="hidden" />
+      <div class="loader hidden"></div>
+    </div>
+
+    <script>
+      const img1 = document.getElementById("img1");
+      const img2 = document.getElementById("img2");
+      const loader = document.querySelector(".loader");
+
+      setTimeout(() => {
+        // At 0.5 seconds, show img2 and loader
+        img1.classList.add("hidden");
+        img2.classList.remove("hidden");
+        loader.classList.remove("hidden");
+      }, 800);
+
+      setTimeout(() => {
+        // At 0.7 seconds, show img1 again and hide the loader
+        img2.classList.add("hidden");
+        loader.classList.add("hidden");
+        img1.classList.remove("hidden");
+      }, 3000);
+    </script>
+  </body>
+</html>

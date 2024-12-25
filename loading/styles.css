@@ -1,0 +1,47 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: transparent;
+  }
+  
+  .container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+  }
+  
+  .loader {
+    position: absolute;
+    border: 8px solid transparent;
+    border-top: 8px solid #F1B968;
+    border-radius: 50%;
+    width: 192px;
+    height: 192px;
+    animation: spin 1s linear infinite;
+    right: -8px;
+    bottom: 8px;
+  }
+  
+  .hidden {
+    display: none;
+  }
+  
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
