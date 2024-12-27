@@ -45,7 +45,7 @@
           </h6>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="../pages/profile.html">
+          <a class="nav-link active" data-section-id="#main_content_section">
             <div
               class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
               <svg width="12px" height="12px" viewBox="0 0 46 42" version="1.1" xmlns="http://www.w3.org/2000/svg"
@@ -74,7 +74,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="../pages/sign-in.html">
+          <a class="nav-link" data-section-id="#order_content_section">
             <div
               class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
               <svg width="12px" height="12px" viewBox="0 0 40 44" version="1.1" xmlns="http://www.w3.org/2000/svg"
@@ -100,7 +100,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="../pages/sign-up.html">
+          <a class="nav-link" data-section-id="#wishlist_content_section">
             <div
               class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
               <svg width="12px" height="20px" viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg"
@@ -132,7 +132,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="../pages/sign-up.html">
+          <a class="nav-link" data-section-id="#cart_content_section">
             <div
               class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
               <svg width="12px" height="20px" viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg"
@@ -164,7 +164,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="../pages/sign-up.html">
+          <a class="nav-link" data-section-id="#payment_content_section">
             <div
               class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
               <svg width="12px" height="20px" viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg"
@@ -244,7 +244,7 @@
   </aside>
 
   <!-- Main content Section -->
-  <div class="main-content position-relative bg-gray-100 max-height-vh-100 h-100 ps">
+  <div class="main-content position-relative bg-gray-100 max-height-vh-100 h-100 ps" id="main_content_section">
     <div class="container-fluid">
       <div class="page-header min-height-300 border-radius-xl mt-4" style="
             background-image: url('../assets/img/curved-images/curved0.jpg');
@@ -562,22 +562,7 @@
           </div>
         </div>
       </div>
-      <footer class="footer pt-3">
-        <div class="container-fluid">
-          <div class="row align-items-center justify-content-lg-between">
-            <div class="col-lg-6 mb-lg-0 mb-4">
-              <div class="copyright text-center text-sm text-muted text-lg-start">
-                ©
-                <script>
-                  document.write(new Date().getFullYear());
-                </script>2024
-                2024 , Copyright <i class="fa fa-heart"></i> by
-                <a href="https://aureabliss.com/" class="font-weight-bold" target="_blank">Aurea Bliss</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </footer>
+     
     </div>
     <div class="ps__rail-x" style="left: 0px; bottom: 0px;">
       <div class="ps__thumb-x" tabindex="0" style="left: 0px; width: 0px;"></div>
@@ -586,9 +571,24 @@
       <div class="ps__thumb-y" tabindex="0" style="top: 0px; height: 0px;"></div>
     </div>
   </div>
-
+  <footer class="footer pt-3" style="position: fixed; z-index: 100; bottom: 0; width: 100%;">
+    <div class="container-fluid">
+      <div class="row align-items-center justify-content-lg-between">
+        <div class="col-lg-6 mb-lg-0 mb-4" style="display: flex;justify-content: center;align-items: center;width: 100%;background-color: white; font-size:14px; padding: 12px;margin: 0;">
+          <div class="copyright text-center text-muted text-lg-start">
+            ©
+            <script>
+              document.write(new Date().getFullYear());
+            </script>
+             , Copyright <i class="fa fa-heart"></i> by
+            <a href="https://aureabliss.com/" class="font-weight-bold" target="_blank">Aurea Bliss</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
   <!-- Order History -->
-  <div class="main-content position-relative bg-gray-100 max-height-vh-100 h-100 ps">
+  <div class="main-content position-relative bg-gray-100 max-height-vh-100 h-100 ps" id="order_content_section">
     <div class="col-md-11 m-4">
       <div class="card">
         <div class="card-header pb-0 px-3">
@@ -649,7 +649,7 @@
   </div>
 
   <!-- Wishlist -->
-  <div class="main-content position-relative bg-gray-100 max-height-vh-100 h-100 ps">
+  <div class="main-content position-relative bg-gray-100 max-height-vh-100 h-100 ps" id="wishlist_content_section">
     <div class="col-md-11 m-4">
       <div class="card">
         <div class="card-header pb-0 px-3">
@@ -735,7 +735,7 @@
   </div>
 
   <!-- Cart -->
-  <div class="main-content position-relative bg-gray-100 max-height-vh-100 h-100 ps">
+  <div class="main-content position-relative bg-gray-100 max-height-vh-100 h-100 ps" id="cart_content_section">
     <div class="col-md-11 m-4">
       <div class="card">
         <div class="card-header pb-0 px-3">
@@ -823,7 +823,7 @@
   </div>
 
   <!-- Pament Methods -->
-  <div class="main-content position-relative bg-gray-100 max-height-vh-100 h-100 ps">
+  <div class="main-content position-relative bg-gray-100 max-height-vh-100 h-100 ps " id="payment_content_section">
     <div class="col-md-11 mb-lg-0 m-4">
       <div class="card mt-4">
         <div class="card-header pb-0 p-3">
@@ -954,6 +954,7 @@
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" ></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" ></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" ></script>
+<script src="./script.js"></script>
 </body>
 
 </html>
